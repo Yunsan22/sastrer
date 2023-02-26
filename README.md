@@ -112,7 +112,7 @@ Sastreilor will allow tailors all around the world to ditch their notebooks by a
 ### Interactive Prototype
 <img src="https://i.imgur.com/I2ScXQN.gif">
 
-![](https://imgur.com/1EQgIdr)
+![](https://i.imgur.com/kZ0jN5C.gif)
 
 ## Build Progres: Video Walkthrough
 
