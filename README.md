@@ -120,7 +120,7 @@ Here's a walkthrough of implemented user stories:
 
 | Dec 9, 2022 | TBA, 2022 | TBA, 2022 | TBA, 2022 
 | --- | --- | --- | --- |
-| ![](https://i.imgur.com/XaAYsQQ.gif) | ![]() | ![]() | ![]() |
+| ![](https://i.imgur.com/FHJo7DI.gif) | ![]() | ![]() | ![]() |
 
 
 ## Schema 
