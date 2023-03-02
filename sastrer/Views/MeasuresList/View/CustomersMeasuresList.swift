@@ -1,36 +1,26 @@
 //
-//  SearchView.swift
+//  CustomersMeasuresList.swift
 //  sastrer
 //
-//  Created by Yunior Sanchez on 2/24/23.
+//  Created by Yunior Sanchez on 2/28/23.
 //
 
 import SwiftUI
 
-struct SearchView: View {
+struct CustomersMeasuresList: View {
     @State var text = ""
     @Environment(\.presentationMode) var presentationMode
+    
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(dashboardButtons.filter{ $0.buttonTittle.contains(text) || text == ""
                 }) { dashItem in
-                    Text(dashItem.buttonTittle)
+                    Text(" \(dashItem.buttonTittle) \(dashItem.ButtonSubtitle)")
                 }
             }
-            .searchable(text: $text,placement: .navigationBarDrawer(displayMode: .always),prompt: Text("something, else, app")) {
-                ForEach(suggestions) { suggestion in
-                    
-                    Button {
-                        text = suggestion.text
-                    } label: {
-                        Text(suggestion.text)
-                            .searchCompletion(suggestion.text)
-                    }
-                    
-                }
-            }
+            .searchable(text: $text,placement: .navigationBarDrawer(displayMode: .always),prompt: Text("something, else, app"))
             .navigationTitle("Search")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -44,12 +34,11 @@ struct SearchView: View {
             }
             
         }
-        
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
+struct CustomersMeasuresList_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        CustomersMeasuresList()
     }
 }

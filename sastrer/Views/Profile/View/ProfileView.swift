@@ -12,7 +12,7 @@ struct ProfileView: View {
     @EnvironmentObject var sessionService: SessionServiceImpl
     
     @State var confirmLogout: Bool = false
-    
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -23,6 +23,15 @@ struct ProfileView: View {
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Profile")
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Text("Done").bold()
+                    }
+                }
+            }
         }
     }
 

@@ -82,6 +82,10 @@
 		BDCE71EC2996EADA00A16560 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE71EB2996EADA00A16560 /* Tab.swift */; };
 		BDD15A0F29A9448900171A44 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A0E29A9448900171A44 /* Model.swift */; };
 		BDD15A1129A9638E00171A44 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A1029A9638E00171A44 /* SearchView.swift */; };
+		BDD15A1529AEA91E00171A44 /* CustomersMeasuresList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A1429AEA91E00171A44 /* CustomersMeasuresList.swift */; };
+		BDD15A1929AF77E400171A44 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A1829AF77E400171A44 /* ToDoView.swift */; };
+		BDD15A1D29AF784D00171A44 /* CalendarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A1C29AF784D00171A44 /* CalendarItemView.swift */; };
+		BDD15A1F29AF790900171A44 /* DashboardSearchSugestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A1E29AF790900171A44 /* DashboardSearchSugestion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,14 +124,14 @@
 		BDB8530E299ED53800E82E34 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		BDBCF39229A576DD00184D51 /* BlobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobView.swift; sourceTree = "<group>"; };
 		BDBCF39429A6B6BB00184D51 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
-		BDCE714A2996B46400A16560 /* sastrer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sastrer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDCE714A2996B46400A16560 /* Tailored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tailored.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCE714D2996B46400A16560 /* sastrerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sastrerApp.swift; sourceTree = "<group>"; };
 		BDCE714F2996B46400A16560 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BDCE71512996B46600A16560 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDCE71542996B46600A16560 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		BDCE715A2996B46700A16560 /* sastrerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sastrerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDCE715A2996B46700A16560 /* TailoredTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TailoredTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCE715E2996B46700A16560 /* sastrerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sastrerTests.swift; sourceTree = "<group>"; };
-		BDCE71642996B46700A16560 /* sastrerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sastrerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDCE71642996B46700A16560 /* TailoredUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TailoredUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCE71682996B46700A16560 /* sastrerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sastrerUITests.swift; sourceTree = "<group>"; };
 		BDCE716A2996B46700A16560 /* sastrerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sastrerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BDCE71792996B51C00A16560 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -156,6 +160,10 @@
 		BDCE71EB2996EADA00A16560 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		BDD15A0E29A9448900171A44 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BDD15A1029A9638E00171A44 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		BDD15A1429AEA91E00171A44 /* CustomersMeasuresList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersMeasuresList.swift; sourceTree = "<group>"; };
+		BDD15A1829AF77E400171A44 /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
+		BDD15A1C29AF784D00171A44 /* CalendarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemView.swift; sourceTree = "<group>"; };
+		BDD15A1E29AF790900171A44 /* DashboardSearchSugestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSearchSugestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +216,9 @@
 		BDB852DD2997C2E200E82E34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BDD15A1A29AF781C00171A44 /* Calendar */,
+				BDD15A1629AF77BE00171A44 /* To-Dos */,
+				BDD15A1229AEA8EC00171A44 /* MeasuresList */,
 				BDB852ED29999F8500E82E34 /* ForgotPwView */,
 				BDB852E929999C7A00E82E34 /* Register */,
 				BDB852E1299912C100E82E34 /* Login */,
@@ -396,9 +407,9 @@
 		BDCE714B2996B46400A16560 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BDCE714A2996B46400A16560 /* sastrer.app */,
-				BDCE715A2996B46700A16560 /* sastrerTests.xctest */,
-				BDCE71642996B46700A16560 /* sastrerUITests.xctest */,
+				BDCE714A2996B46400A16560 /* Tailored.app */,
+				BDCE715A2996B46700A16560 /* TailoredTests.xctest */,
+				BDCE71642996B46700A16560 /* TailoredUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -566,6 +577,7 @@
 				BDB852E729998C5A00E82E34 /* CloseModifier.swift */,
 				BDBCF39429A6B6BB00184D51 /* Animations.swift */,
 				BDD15A0E29A9448900171A44 /* Model.swift */,
+				BDD15A1E29AF790900171A44 /* DashboardSearchSugestion.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -633,12 +645,60 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BDD15A1229AEA8EC00171A44 /* MeasuresList */ = {
+			isa = PBXGroup;
+			children = (
+				BDD15A1329AEA8FB00171A44 /* View */,
+			);
+			path = MeasuresList;
+			sourceTree = "<group>";
+		};
+		BDD15A1329AEA8FB00171A44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BDD15A1429AEA91E00171A44 /* CustomersMeasuresList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BDD15A1629AF77BE00171A44 /* To-Dos */ = {
+			isa = PBXGroup;
+			children = (
+				BDD15A1729AF77CB00171A44 /* view */,
+				BDD15A1C29AF784D00171A44 /* CalendarItemView.swift */,
+			);
+			path = "To-Dos";
+			sourceTree = "<group>";
+		};
+		BDD15A1729AF77CB00171A44 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BDD15A1829AF77E400171A44 /* ToDoView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BDD15A1A29AF781C00171A44 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				BDD15A1B29AF782800171A44 /* View */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		BDD15A1B29AF782800171A44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BDCE71492996B46400A16560 /* sastrer */ = {
+		BDCE71492996B46400A16560 /* Tailored */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BDCE716E2996B46700A16560 /* Build configuration list for PBXNativeTarget "sastrer" */;
+			buildConfigurationList = BDCE716E2996B46700A16560 /* Build configuration list for PBXNativeTarget "Tailored" */;
 			buildPhases = (
 				BDCE71462996B46400A16560 /* Sources */,
 				BDCE71472996B46400A16560 /* Frameworks */,
@@ -649,7 +709,7 @@
 			);
 			dependencies = (
 			);
-			name = sastrer;
+			name = Tailored;
 			packageProductDependencies = (
 				BDCE71822996B87D00A16560 /* AlamofireImage */,
 				BDCE71852996B93200A16560 /* FirebaseAnalytics */,
@@ -675,12 +735,12 @@
 				BDCE71AD2996B93300A16560 /* FirebaseStorageCombine-Community */,
 			);
 			productName = sastrer;
-			productReference = BDCE714A2996B46400A16560 /* sastrer.app */;
+			productReference = BDCE714A2996B46400A16560 /* Tailored.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BDCE71592996B46700A16560 /* sastrerTests */ = {
+		BDCE71592996B46700A16560 /* TailoredTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BDCE71712996B46700A16560 /* Build configuration list for PBXNativeTarget "sastrerTests" */;
+			buildConfigurationList = BDCE71712996B46700A16560 /* Build configuration list for PBXNativeTarget "TailoredTests" */;
 			buildPhases = (
 				BDCE71562996B46700A16560 /* Sources */,
 				BDCE71572996B46700A16560 /* Frameworks */,
@@ -691,14 +751,14 @@
 			dependencies = (
 				BDCE715C2996B46700A16560 /* PBXTargetDependency */,
 			);
-			name = sastrerTests;
+			name = TailoredTests;
 			productName = sastrerTests;
-			productReference = BDCE715A2996B46700A16560 /* sastrerTests.xctest */;
+			productReference = BDCE715A2996B46700A16560 /* TailoredTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BDCE71632996B46700A16560 /* sastrerUITests */ = {
+		BDCE71632996B46700A16560 /* TailoredUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BDCE71742996B46700A16560 /* Build configuration list for PBXNativeTarget "sastrerUITests" */;
+			buildConfigurationList = BDCE71742996B46700A16560 /* Build configuration list for PBXNativeTarget "TailoredUITests" */;
 			buildPhases = (
 				BDCE71602996B46700A16560 /* Sources */,
 				BDCE71612996B46700A16560 /* Frameworks */,
@@ -709,9 +769,9 @@
 			dependencies = (
 				BDCE71662996B46700A16560 /* PBXTargetDependency */,
 			);
-			name = sastrerUITests;
+			name = TailoredUITests;
 			productName = sastrerUITests;
-			productReference = BDCE71642996B46700A16560 /* sastrerUITests.xctest */;
+			productReference = BDCE71642996B46700A16560 /* TailoredUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -737,7 +797,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BDCE71452996B46400A16560 /* Build configuration list for PBXProject "sastrer" */;
+			buildConfigurationList = BDCE71452996B46400A16560 /* Build configuration list for PBXProject "Tailored" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -754,9 +814,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BDCE71492996B46400A16560 /* sastrer */,
-				BDCE71592996B46700A16560 /* sastrerTests */,
-				BDCE71632996B46700A16560 /* sastrerUITests */,
+				BDCE71492996B46400A16560 /* Tailored */,
+				BDCE71592996B46700A16560 /* TailoredTests */,
+				BDCE71632996B46700A16560 /* TailoredUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -817,10 +877,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD15A1529AEA91E00171A44 /* CustomersMeasuresList.swift in Sources */,
 				BDB852F029999FA400E82E34 /* ForgotPasswordView.swift in Sources */,
 				BDB852F9299AE38C00E82E34 /* RegistrationViewModel.swift in Sources */,
 				BDCE71B12996BA7000A16560 /* SuitMeasuresDetails.swift in Sources */,
 				BDB85303299D02F100E82E34 /* LoginCredentials.swift in Sources */,
+				BDD15A1D29AF784D00171A44 /* CalendarItemView.swift in Sources */,
 				BDB852E62999147000E82E34 /* InputPasswordFieldView.swift in Sources */,
 				BDB852E829998C5B00E82E34 /* CloseModifier.swift in Sources */,
 				BDB852FD299BB53900E82E34 /* SessionUserDetails.swift in Sources */,
@@ -853,6 +915,7 @@
 				BDB852F32999CC6C00E82E34 /* RegistrationDetails.swift in Sources */,
 				BDCE71EA2996E7CA00A16560 /* ProfileView.swift in Sources */,
 				BDB852EC29999CB000E82E34 /* RegisterView.swift in Sources */,
+				BDD15A1F29AF790900171A44 /* DashboardSearchSugestion.swift in Sources */,
 				BDCE71802996B80C00A16560 /* SuitMeasuresService.swift in Sources */,
 				BDCE71502996B46400A16560 /* ContentView.swift in Sources */,
 				BDB852E4299912FE00E82E34 /* LoginView.swift in Sources */,
@@ -862,6 +925,7 @@
 				BDCE71C52996BD7E00A16560 /* CustomersMeasurementsAndDetails.swift in Sources */,
 				BDCE71CC2996BF1000A16560 /* PreviewLayoutComponentModifier.swift in Sources */,
 				BDCE71E62996E6FE00A16560 /* TabBar.swift in Sources */,
+				BDD15A1929AF77E400171A44 /* ToDoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,12 +951,12 @@
 /* Begin PBXTargetDependency section */
 		BDCE715C2996B46700A16560 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BDCE71492996B46400A16560 /* sastrer */;
+			target = BDCE71492996B46400A16560 /* Tailored */;
 			targetProxy = BDCE715B2996B46700A16560 /* PBXContainerItemProxy */;
 		};
 		BDCE71662996B46700A16560 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BDCE71492996B46400A16560 /* sastrer */;
+			target = BDCE71492996B46400A16560 /* Tailored */;
 			targetProxy = BDCE71652996B46700A16560 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1089,7 +1153,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sastrer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/sastrer";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tailored.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tailored";
 			};
 			name = Debug;
 		};
@@ -1109,7 +1173,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sastrer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/sastrer";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tailored.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tailored";
 			};
 			name = Release;
 		};
@@ -1152,7 +1216,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BDCE71452996B46400A16560 /* Build configuration list for PBXProject "sastrer" */ = {
+		BDCE71452996B46400A16560 /* Build configuration list for PBXProject "Tailored" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BDCE716C2996B46700A16560 /* Debug */,
@@ -1161,7 +1225,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BDCE716E2996B46700A16560 /* Build configuration list for PBXNativeTarget "sastrer" */ = {
+		BDCE716E2996B46700A16560 /* Build configuration list for PBXNativeTarget "Tailored" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BDCE716F2996B46700A16560 /* Debug */,
@@ -1170,7 +1234,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BDCE71712996B46700A16560 /* Build configuration list for PBXNativeTarget "sastrerTests" */ = {
+		BDCE71712996B46700A16560 /* Build configuration list for PBXNativeTarget "TailoredTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BDCE71722996B46700A16560 /* Debug */,
@@ -1179,7 +1243,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BDCE71742996B46700A16560 /* Build configuration list for PBXNativeTarget "sastrerUITests" */ = {
+		BDCE71742996B46700A16560 /* Build configuration list for PBXNativeTarget "TailoredUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BDCE71752996B46700A16560 /* Debug */,

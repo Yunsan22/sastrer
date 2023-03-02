@@ -118,7 +118,7 @@ Sastreilor will allow tailors all around the world to ditch their notebooks by a
 
 Here's a walkthrough of implemented user stories:
 
-| Dec 9, 2022 | TBA, 2022 | TBA, 2022 | TBA, 2022 
+| Dec 9, 2022 | Feb 26, 2023 | TBA, 2022 | TBA, 2022 
 | --- | --- | --- | --- |
 | ![](https://i.imgur.com/FHJo7DI.gif) | ![](https://i.imgur.com/Bf16OHh.gif) | ![]() | ![]() |
 

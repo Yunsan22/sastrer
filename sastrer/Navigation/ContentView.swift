@@ -20,11 +20,11 @@ struct ContentView: View {
                 case .homes:
                     HomeView()
                 case .measuresView:
-                    ProfileView()
+                    CustomersMeasuresList()
                 case .toDoss:
-                    ProfileView()
+                    ToDoView()
                 case .calendarVi:
-                    ProfileView()
+                    CalendarItemView()
                 }
  
             TabBar()

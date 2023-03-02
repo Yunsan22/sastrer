@@ -64,7 +64,7 @@ struct MenSuitsMeasuresView: View {
                 RoundedRectangle(cornerRadius: 30,style: .continuous).foregroundStyle(.linearGradient(colors: [.blue,.black], startPoint: .topLeading, endPoint: .bottomTrailing)).frame(width: 900,height: 400)
                     .rotationEffect(.degrees(135))
                     .offset(y:-400)
-                    .matchedGeometryEffect(id: "background", in: namespace)
+//                    .matchedGeometryEffect(id: "background", in: namespace)
                 
             }
             
@@ -83,7 +83,7 @@ struct MenSuitsMeasuresView: View {
                 
             }
             .frame(maxWidth: .infinity)
-            .frame(height: scrollY > 0 ? 500 - scrollY : 500)
+            .frame(height: scrollY > 0 ? (500 + scrollY): 500)
             .foregroundStyle(.black)
             .background(
                 Group{
