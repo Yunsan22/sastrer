@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .homes
     @EnvironmentObject var model: Model
+    @EnvironmentObject var launchScreenManager: LaunchScreenManager
     
     @EnvironmentObject var sessionService: SessionServiceImpl
     
@@ -33,6 +34,13 @@ struct ContentView: View {
         .safeAreaInset(edge: .bottom, content: {
             Color.clear.frame(height: 44)
         })
+//        .onAppear {
+//            DispatchQueue
+//                .main
+//                .asyncAfter(deadline: .now() + 5) {
+//                    sessionService.dismiss()
+//                }
+//        }
         
     }
 }
@@ -42,5 +50,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .environmentObject(SessionServiceImpl())
             .environmentObject(Model())
+            .environmentObject(LaunchScreenManager())
     }
 }

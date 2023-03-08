@@ -495,7 +495,7 @@ private extension CustomerDetailsView {
             print($showStatusBar)
             //this below save to Firebase
             //trying alternative way to save to firestore
-            //            viewModel.custumerCreation()
+                        viewModel.custumerCreation()
             
         }
                    .fullScreenCover(isPresented: $shouldShowMeasures, content: {

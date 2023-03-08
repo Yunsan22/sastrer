@@ -16,17 +16,17 @@ enum CustomerCreationState {
 
 protocol CustomerCreaionViewModel {
     func custumerCreation()
-    var service: CustDetailsAndMeasuresService {get}
+    var service: CustomerInfoService {get}
     var state: CustomerCreationState { get }
     var customerDetails: CustomersMeasurementsAndDetails { get }
-    init (service: CustDetailsAndMeasuresService)
+    init (service: CustomerInfoService)
     
 }
 
 final class CustomerCreationViewModelImpl: ObservableObject, CustomerCreaionViewModel {
     
     
-    let service: CustDetailsAndMeasuresService
+    let service: CustomerInfoService
     var state: CustomerCreationState = .na
     @Published var customerDetails: CustomersMeasurementsAndDetails = CustomersMeasurementsAndDetails.new
     
@@ -43,7 +43,7 @@ final class CustomerCreationViewModelImpl: ObservableObject, CustomerCreaionView
         
     }
     
-    init(service: CustDetailsAndMeasuresService) {
+    init(service: CustomerInfoService) {
         self.service = service
         
     }

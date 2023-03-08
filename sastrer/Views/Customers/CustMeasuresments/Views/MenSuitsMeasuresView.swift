@@ -322,6 +322,7 @@ struct MenSuitsMeasuresView: View {
                         withAnimation(.spring(response: 0.6,dampingFraction: 0.8)){
                             show.toggle()
                             print("button printed")
+                            viewModel.suitMeasuresCreation()
                             //                                    handleDismissal()
                         }
                     }

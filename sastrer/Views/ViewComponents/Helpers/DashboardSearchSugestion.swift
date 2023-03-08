@@ -17,3 +17,5 @@ DashboardSearchSugestion(text: "Take Measures"),
 DashboardSearchSugestion(text: "New Job"),
 DashboardSearchSugestion(text: "Jobs Delivered")
 ]
+
+

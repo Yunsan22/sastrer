@@ -147,6 +147,7 @@ struct HomeView: View {
     }
     var cards:some View {
         ForEach(dashboardButtons) { dashButtonItem in
+            
             TakeMeasuresView(namespace: namespace,show: $show, dashorButtons: dashButtonItem )
                 .onTapGesture {
                     withAnimation(.openCard ) {

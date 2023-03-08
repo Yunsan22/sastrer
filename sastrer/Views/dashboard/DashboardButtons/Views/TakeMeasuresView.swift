@@ -27,9 +27,11 @@ struct TakeMeasuresView: View {
                     .matchedGeometryEffect(id: "subtitle\(dashorButtons.id)", in: namespace)
                 
                 
+                
             }
             .padding(20)
             .background(
+                
                 Rectangle()
                     .fill(.ultraThinMaterial)
                     .mask(RoundedRectangle(cornerRadius: 30,style: .continuous))
@@ -41,7 +43,7 @@ struct TakeMeasuresView: View {
         .foregroundColor(.white)
         .background(
             Group{
-                 
+
                 Image(dashorButtons.background2)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -56,20 +58,25 @@ struct TakeMeasuresView: View {
 //                    .frame(height: 150)
                     .offset(y:-50)
                     .matchedGeometryEffect(id: "background3\(dashorButtons.id)", in: namespace)
+                
             }
-            
+
         )
         .background(
             Image(dashorButtons.background)
                 .resizable()
                 .aspectRatio( contentMode: .fill)
+            
                 .matchedGeometryEffect(id: "bckgrnd\(dashorButtons.id)", in: namespace)
+                .strokeStyle(cornerRadius: 30)
+                
         )
         .mask(
             RoundedRectangle(cornerRadius: 30,style: .continuous)
                 .matchedGeometryEffect(id: "mask\(dashorButtons.id)", in: namespace)
         )
         .frame(height: 300)
+       
       
     }
 }

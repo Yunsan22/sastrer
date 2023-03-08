@@ -83,8 +83,9 @@ struct MensComponent: View {
         .background(
             Image(measurementsButtons.background)
                 .resizable()
-                .aspectRatio( contentMode: .fill)
+                .aspectRatio( contentMode: .fit)
                 .matchedGeometryEffect(id: "bckgrnd\(measurementsButtons.id)", in: namespace)
+                .strokeStyle(cornerRadius: 30)
         )
         .mask(
             RoundedRectangle(cornerRadius: 30,style: .continuous)

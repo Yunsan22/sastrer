@@ -20,6 +20,7 @@ struct sastrerApp: App {
     
 //    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var sessionService = SessionServiceImpl()
+    @StateObject var launchScreenManager = LaunchScreenManager()
    @StateObject var model = Model()
     
     init(){
@@ -27,17 +28,24 @@ struct sastrerApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                switch sessionService.state {
-                case .loggedIn:
-                    ContentView()
-                        .environmentObject(sessionService)
-                        .environmentObject(model)
-                case .loggedOut:
-                    LoginView()
+            ZStack {
+                NavigationView {
+                    switch sessionService.state {
+                    case .loggedIn:
+                        ContentView()
+                            .environmentObject(sessionService)
+                            .environmentObject(model)
+                    case .loggedOut:
+                        LoginView()
+                    case .loading:
+                        LaunchScreenView()
+                            
+                    }
+                  
                 }
-                
             }
+            .environmentObject(sessionService)
+//            .environmentObject(launchScreenManager)
 //            .preferredColorScheme(.dark)
 //            ContentView()
         }

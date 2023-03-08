@@ -29,9 +29,6 @@ struct theView: View {
     
     
     
-    
-    
-    
     var body: some View {
             ZStack {
                 ScrollView {

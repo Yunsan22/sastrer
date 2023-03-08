@@ -11,7 +11,10 @@ struct ProfileView: View {
     
     @EnvironmentObject var sessionService: SessionServiceImpl
     
+    
     @State var confirmLogout: Bool = false
+    
+    @Environment(\.dismiss) private var dismiss
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -50,7 +53,7 @@ struct ProfileView: View {
                     .font(.system(size: 200))
                     .offset(x: -50,y: -100)
                 )
-            Text("Yunior Sanchez")
+            Text("Hi \(sessionService.userDetails?.firstName ?? "N/A" )")
                 .font(.title.weight(.semibold))
             HStack {
                 Image(systemName: "location")
@@ -70,13 +73,15 @@ struct ProfileView: View {
                       message: Text("Are you sure you want to LogOut?"),
                       primaryButton: .default(Text("Yes"), action: {
                     sessionService.logout()
+                    handleDismissal()
                 }),
                       secondaryButton: .cancel(Text("No")
                    
-                    //                    handleDismissal()
+                    //
                 )
                 )
             }
+            .clipped()
         }
         .frame(maxWidth: .infinity)
         
@@ -96,5 +101,16 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(SessionServiceImpl())
+    }
+}
+
+extension ProfileView {
+    func handleDismissal(){
+        if #available(iOS 15, *) {
+            dismiss()
+        }else {
+            presentationMode.wrappedValue.dismiss()
+        }
     }
 }
