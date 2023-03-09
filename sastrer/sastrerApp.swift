@@ -28,7 +28,7 @@ struct sastrerApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ZStack {
+//            ZStack {
                 NavigationView {
                     switch sessionService.state {
                     case .loggedIn:
@@ -43,8 +43,8 @@ struct sastrerApp: App {
                     }
                   
                 }
-            }
-            .environmentObject(sessionService)
+//            }
+                .environmentObject(sessionService)
 //            .environmentObject(launchScreenManager)
 //            .preferredColorScheme(.dark)
 //            ContentView()

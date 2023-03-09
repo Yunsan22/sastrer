@@ -34,14 +34,6 @@ struct ContentView: View {
         .safeAreaInset(edge: .bottom, content: {
             Color.clear.frame(height: 44)
         })
-//        .onAppear {
-//            DispatchQueue
-//                .main
-//                .asyncAfter(deadline: .now() + 5) {
-//                    sessionService.dismiss()
-//                }
-//        }
-        
     }
 }
 
