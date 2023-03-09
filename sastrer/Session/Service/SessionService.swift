@@ -11,7 +11,7 @@ import Firebase
 import FirebaseFirestore
 import FirebaseCore
 import FirebaseAuth
-
+import GoogleSignIn
 
 enum SessionState {
     case loggedIn
@@ -48,6 +48,9 @@ final class SessionServiceImpl: ObservableObject, SessionService {
         }
     }
     
+    func signInWithGoogle() {
+        //handle signin in with google
+    }
     
 }
 

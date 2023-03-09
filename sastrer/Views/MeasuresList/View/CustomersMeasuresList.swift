@@ -14,6 +14,10 @@ struct CustomersMeasuresList: View {
     @State var text = ""
     @Environment(\.presentationMode) var presentationMode
     
+    @EnvironmentObject var model: Model
+    @EnvironmentObject var launchScreenManager: LaunchScreenManager
+    @EnvironmentObject var sessionService: SessionServiceImpl
+    
     @ObservedObject var models = ClientViewModel()
 //    @ObservableObject var viewModel = ClientViewModel()
     
@@ -25,9 +29,16 @@ struct CustomersMeasuresList: View {
                 ForEach(models.clientInfo.filter{ $0.firstName.contains(text) || text == ""
                 })
                 { dashItem in
-                    Text(dashItem.firstName)
+                    NavigationLink {
+                        Text(dashItem.lasName )
+                    } label: {
+                        Text(dashItem.firstName)
+                    }
+
+                   
                 }
             }
+            .preferredColorScheme(.dark)
             .searchable(text: $text,placement: .navigationBarDrawer(displayMode: .always),prompt: Text("something, else, app")) {
                 ForEach(clientSugestion) { suggestion in
                     
@@ -63,5 +74,6 @@ struct CustomersMeasuresList: View {
 struct CustomersMeasuresList_Previews: PreviewProvider {
     static var previews: some View {
         CustomersMeasuresList()
+            
     }
 }

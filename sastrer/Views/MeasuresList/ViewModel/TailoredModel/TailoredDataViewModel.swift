@@ -17,13 +17,13 @@ class ClientViewModel: ObservableObject {
     
     func getData () {
         
-        let uid = Auth.auth().currentUser?.uid
+        guard let uid = Auth.auth().currentUser?.uid else { return }
         
         //get a reference to Database
         let db = Firestore.firestore()
         
         //read the document at spefic path
-        db.collection("/users/\(String(describing: uid!))/customers")
+        db.collection("/users/\(uid)/customers")
             .getDocuments { snapshot, error in
                 //check for errors
                 if error == nil {
@@ -37,16 +37,23 @@ class ClientViewModel: ObservableObject {
                                 
                                 // create a client list for each document return
                                 return ClientDataList(id: d.documentID,
-                                                      firstName: d["firstName"] as? String ?? "")
+                                                      firstName: d["firstName"] as? String ?? "",
+                                                      comments: d["comments"] as? String ?? "",
+                                                      gender: d["gender"] as? String ?? "",
+                                                      lasName: d["lasName"] as? String ?? "",
+                                                      phone: d["phone"] as? String ?? "")
+                                
                             }
                             
                         }
-                        print("this is clients info \(self.clientInfo)")
-                        print( "the uid: \(String(describing: uid!))")
+                        
+                        print( "the uid: \(uid)")
                     }
+                    
                 } else {
                     //handle error
                 }
+                print("this is clients info \(self.clientInfo)")
             }
     }
 }
