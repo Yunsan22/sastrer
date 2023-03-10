@@ -36,7 +36,13 @@ final class SessionServiceImpl: ObservableObject, SessionService {
     }
     
     func logout() {
-        try? Auth.auth().signOut()
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
+//        try? Auth.auth().signOut()
     }
     
     func dismiss(){
@@ -48,9 +54,7 @@ final class SessionServiceImpl: ObservableObject, SessionService {
         }
     }
     
-    func signInWithGoogle() {
-        //handle signin in with google
-    }
+    
     
 }
 
@@ -60,12 +64,18 @@ private extension SessionServiceImpl {
             .auth()
             .addStateDidChangeListener { [weak self] res, usersdb in
                 guard let self = self else { return }
+                
+                
                 //is user verified
                 let verifiedUser = usersdb?.isEmailVerified
-                
+                let verifiedUse =
                 self.state = verifiedUser != true ? .loggedOut : .loggedIn
+                
                 if let uid = usersdb?.uid {
+                    
+                    
                     self.handleRefresh(with: uid)
+//                    self.handlegoogleinfo()
                 }
             }
     }
@@ -107,11 +117,42 @@ private extension SessionServiceImpl {
                 }
             } else {
                 //handle error
+                print("not data to displayname")
             }
             
             
         })
        
             
+    }
+    
+    func handlegoogleinfo() {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+        
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: ApplicationUtility.getRootViewController) { [self] signInResult, error in
+            guard error == nil else { return }
+            guard let signInResult = signInResult else { return }
+ 
+            let user = signInResult
+
+            let emailAddress = user.profile?.email
+
+            let fullName = user.profile?.name
+            let givenName = user.profile?.givenName
+            let familyName = user.profile?.familyName
+
+            let profilePicUrl = user.profile?.imageURL(withDimension: 320)
+            
+            DispatchQueue.main.async {
+                self.userDetails = SessionUserDetails(firstName: fullName!,
+                                                      lastName: familyName!,
+                                                      email: emailAddress!)
+                
+
+            }
+        }
     }
 }
