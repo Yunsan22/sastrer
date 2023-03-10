@@ -14,50 +14,92 @@ struct ForgotPasswordView: View {
     )
     
     
+    @EnvironmentObject var model: Model
+    
     var body: some View {
-        //        Color.black
-        
+        VStack {
+            Text("Reset Password")
+                .font(.largeTitle).bold()
+            Text("Need to reset your accounts's password?")
+                .font(.headline)
+            
+            TextField("Email", text: $vm.email)
+                .inputStyle(icon: "envelope.badge.shield.half.filled.fill")
+                .textContentType(.emailAddress)
+                .keyboardType(.emailAddress)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
            
-            VStack(spacing: 16){
-                Section {
-                    
-                    InputTextFieldView(text: $vm.email, placeholder: "Email", keyboardType: .emailAddress, sfSymbol: "envelope")
-                    
-                    
-                    ButtonView(title: "Send Password Reset",background: .clear,
-                               foreground: .blue,
-                               border: .blue) {
-                        //Handle password rese action
-                        vm.sendPasswordReset()
-                        presentationMode.wrappedValue.dismiss()
+            HStack {
+//                Spacer()
+                Text("Please allow a few minutes to recieve the email")
+            }
+            .font(.footnote)
+            .foregroundColor(.secondary)
+            .tint(.secondary)
+            
+            Button {
+                //Handle password rese action
+                vm.sendPasswordReset()
+            } label: {
+                Text("Send Password Reset Link")
+                    .frame(maxWidth: .infinity)
+            }
+            .font(.headline)
+            .blendMode(.overlay)
+            .buttonStyle(.angular)
+            .tint(.blue)
+            .controlSize(.large)
+            
+            Group {
+                Divider()
+                
+                HStack {
+                    Text("Was your Password Reset?")
+                    Button{
+                        model.selectedModel = .signIn
+                    } label: {
+                        Text("**Sign In**")
                     }
-                } header: {
-                    Text("ResetPassword").font(.system(.title).weight(.bold))
+                    
                 }
-                .offset(y:-150)
+            }
+            .font(.footnote)
+            .foregroundColor(.secondary)
+                .tint(.secondary)
+                
+            
+        }
+        .preferredColorScheme(.dark)
+        .padding(20)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30,style:  .continuous))
+        .strokeStyle(cornerRadius: 30)
+        .shadow(color: Color("Shadow").opacity(0.2), radius: 30,x:0,y:30)
+        .padding(20)
+        .background(
+            Image("suit 1")
+                .ignoresSafeArea()
+                .frame(height: 550)
+                .offset(x: -80, y: -200)
+        )
+        .background(
+            Group {
+               Image("bckgrnd")
+                    .ignoresSafeArea()
                 
             }
-            .preferredColorScheme(.dark)
-//            .navigationTitle(NSLocalizedString("Reset Password", comment: ""))
-            .background(
-                
-                    RoundedRectangle(cornerRadius: 30,style: .continuous).foregroundStyle(.linearGradient(colors: [.blue,.black], startPoint: .topLeading, endPoint: .bottomTrailing)).frame(width: 900,height: 400)
-                        .rotationEffect(.degrees(135))
-                        .offset(y:-365)
-                    
-                )
-            .applyClose()
-       
         
-        
+        )
         
         
     }
+
 }
 
 struct ForgotPasswordView_Previews: PreviewProvider {
     static var previews: some View {
         ForgotPasswordView()
+            .environmentObject(Model())
     }
 }
 

@@ -33,10 +33,11 @@ struct sastrerApp: App {
                     switch sessionService.state {
                     case .loggedIn:
                         ContentView()
-                            .environmentObject(sessionService)
-                            .environmentObject(model)
+                            
                     case .loggedOut:
-                        LoginView()
+//                      
+                        ModalView()
+                           
                     case .loading:
                         LaunchScreenView()
                             
@@ -45,6 +46,7 @@ struct sastrerApp: App {
                 }
 //            }
                 .environmentObject(sessionService)
+                .environmentObject(model)
 //            .environmentObject(launchScreenManager)
 //            .preferredColorScheme(.dark)
 //            ContentView()

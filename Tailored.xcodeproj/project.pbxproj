@@ -94,6 +94,12 @@
 		BDD15A2A29B36CC600171A44 /* TailoredDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A2929B36CC600171A44 /* TailoredDataViewModel.swift */; };
 		BDD15A2D29B3FF6200171A44 /* ClientDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A2C29B3FF6200171A44 /* ClientDataList.swift */; };
 		BDD15A3229B8AEFE00171A44 /* TestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A3129B8AEFE00171A44 /* TestFile.swift */; };
+		BDD15A3529BA8B7800171A44 /* ItemsDueListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A3429BA8B7800171A44 /* ItemsDueListView.swift */; };
+		BDD15A3729BAE86100171A44 /* AltLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A3629BAE86100171A44 /* AltLoginView.swift */; };
+		BDD15A3929BAE8B600171A44 /* AltSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A3829BAE8B600171A44 /* AltSignUpView.swift */; };
+		BDD15A3B29BAECC000171A44 /* AngularButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A3A29BAECC000171A44 /* AngularButtonStyle.swift */; };
+		BDD15A3D29BAFA4A00171A44 /* InputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A3C29BAFA4900171A44 /* InputStyle.swift */; };
+		BDD15A4029BB071500171A44 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A3F29BB071500171A44 /* ModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +190,12 @@
 		BDD15A2929B36CC600171A44 /* TailoredDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TailoredDataViewModel.swift; sourceTree = "<group>"; };
 		BDD15A2C29B3FF6200171A44 /* ClientDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDataList.swift; sourceTree = "<group>"; };
 		BDD15A3129B8AEFE00171A44 /* TestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFile.swift; sourceTree = "<group>"; };
+		BDD15A3429BA8B7800171A44 /* ItemsDueListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDueListView.swift; sourceTree = "<group>"; };
+		BDD15A3629BAE86100171A44 /* AltLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltLoginView.swift; sourceTree = "<group>"; };
+		BDD15A3829BAE8B600171A44 /* AltSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltSignUpView.swift; sourceTree = "<group>"; };
+		BDD15A3A29BAECC000171A44 /* AngularButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngularButtonStyle.swift; sourceTree = "<group>"; };
+		BDD15A3C29BAFA4900171A44 /* InputStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStyle.swift; sourceTree = "<group>"; };
+		BDD15A3F29BB071500171A44 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		D5E1AF77715032EF012428A5 /* Pods-Tailored-TailoredUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tailored-TailoredUITests.release.xcconfig"; path = "Target Support Files/Pods-Tailored-TailoredUITests/Pods-Tailored-TailoredUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DA032119818BD039592836F7 /* Pods_TailoredTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TailoredTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E187D77E4CBA46EB18407D88 /* Pods_Tailored.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tailored.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,6 +277,7 @@
 		BDB852DD2997C2E200E82E34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BDD15A3329BA8B4700171A44 /* ItemsDueList */,
 				BDD15A1A29AF781C00171A44 /* Calendar */,
 				BDD15A1629AF77BE00171A44 /* To-Dos */,
 				BDD15A1229AEA8EC00171A44 /* MeasuresList */,
@@ -302,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				BDB852E3299912FE00E82E34 /* LoginView.swift */,
+				BDD15A3629BAE86100171A44 /* AltLoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				BDB852EB29999CB000E82E34 /* RegisterView.swift */,
+				BDD15A3829BAE8B600171A44 /* AltSignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -621,6 +636,7 @@
 		BDCE71C62996BE9100A16560 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				BDD15A3E29BB06CF00171A44 /* modal */,
 				BDCE71C92996BEEB00A16560 /* InputTextFieldView.swift */,
 				BDCE71CB2996BF1000A16560 /* PreviewLayoutComponentModifier.swift */,
 				BDCE71CD2996BF4000A16560 /* Styles.swift */,
@@ -629,8 +645,9 @@
 				BDB852E52999147000E82E34 /* InputPasswordFieldView.swift */,
 				BDB852E729998C5A00E82E34 /* CloseModifier.swift */,
 				BDBCF39429A6B6BB00184D51 /* Animations.swift */,
-				BDD15A0E29A9448900171A44 /* Model.swift */,
 				BDD15A1E29AF790900171A44 /* DashboardSearchSugestion.swift */,
+				BDD15A3A29BAECC000171A44 /* AngularButtonStyle.swift */,
+				BDD15A3C29BAFA4900171A44 /* InputStyle.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -788,6 +805,23 @@
 				BDD15A2C29B3FF6200171A44 /* ClientDataList.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BDD15A3329BA8B4700171A44 /* ItemsDueList */ = {
+			isa = PBXGroup;
+			children = (
+				BDD15A3429BA8B7800171A44 /* ItemsDueListView.swift */,
+			);
+			path = ItemsDueList;
+			sourceTree = "<group>";
+		};
+		BDD15A3E29BB06CF00171A44 /* modal */ = {
+			isa = PBXGroup;
+			children = (
+				BDD15A0E29A9448900171A44 /* Model.swift */,
+				BDD15A3F29BB071500171A44 /* ModalView.swift */,
+			);
+			path = modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1113,6 +1147,7 @@
 				BDCE71B82996BBA200A16560 /* NagivationBar.swift in Sources */,
 				BDCE717A2996B51C00A16560 /* HomeView.swift in Sources */,
 				BDB852E02997C4AC00E82E34 /* DashboardButtons.swift in Sources */,
+				BDD15A3729BAE86100171A44 /* AltLoginView.swift in Sources */,
 				BDBCF39329A576DD00184D51 /* BlobView.swift in Sources */,
 				BDCE71D02996BF5900A16560 /* PreferenceKeys.swift in Sources */,
 				BDB85300299BB5D200E82E34 /* SessionService.swift in Sources */,
@@ -1124,14 +1159,19 @@
 				BDD15A1F29AF790900171A44 /* DashboardSearchSugestion.swift in Sources */,
 				BDCE71802996B80C00A16560 /* SuitMeasuresService.swift in Sources */,
 				BDCE71502996B46400A16560 /* ContentView.swift in Sources */,
+				BDD15A3D29BAFA4A00171A44 /* InputStyle.swift in Sources */,
+				BDD15A3929BAE8B600171A44 /* AltSignUpView.swift in Sources */,
 				BDB852E4299912FE00E82E34 /* LoginView.swift in Sources */,
 				BDCE71D92996C0AE00A16560 /* theView.swift in Sources */,
+				BDD15A3529BA8B7800171A44 /* ItemsDueListView.swift in Sources */,
 				BDB8530C299ED3FD00E82E34 /* ForgotPasswordService.swift in Sources */,
 				BDCE714E2996B46400A16560 /* sastrerApp.swift in Sources */,
 				BDCE71C52996BD7E00A16560 /* CustomersMeasurementsAndDetails.swift in Sources */,
+				BDD15A4029BB071500171A44 /* ModalView.swift in Sources */,
 				BDCE71CC2996BF1000A16560 /* PreviewLayoutComponentModifier.swift in Sources */,
 				BDCE71E62996E6FE00A16560 /* TabBar.swift in Sources */,
 				BDD15A2D29B3FF6200171A44 /* ClientDataList.swift in Sources */,
+				BDD15A3B29BAECC000171A44 /* AngularButtonStyle.swift in Sources */,
 				BDD15A1929AF77E400171A44 /* ToDoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -112,41 +112,7 @@ struct LoginView: View {
          
         )
         .preferredColorScheme(.dark)
-        
-//        .overlay(
-//            Group{
-//                Text("Welcome")
-//                    .font(.system(size: 40,weight: .bold,design: .rounded))
-//                    .frame(maxWidth: .infinity,alignment: .leading)
-//                    .offset(y:-170)
-//                VStack(spacing: 16 ) {
-//                    InputTextFieldView(text: .constant(""), placeholder: "Email", keyboardType: .emailAddress, sfSymbol: "envelope")
-//
-//                    InputPasswordFieldView(password: .constant(""), placeholder: "Password", sfSymbol: "lock")
-//                    HStack {
-//                        Spacer()
-//                        Button {
-//                            //handle presenting forgot password
-//                        } label: {
-//                            Text("Forgot Password?")
-//                        }
-//                        .font(.system(size: 16,weight: .bold))
-//
-//                    }
-//
-//                    ButtonView(title: "Login") {
-//                        //handle login
-//                    }
-//
-//                    ButtonView(title: "Register",background: .clear,foreground: .blue,border: .blue) {
-//                        //handle present sign up view
-//
-//                    }
-//                }
-//
-//            }
-            
-//        )
+   
     }
 }
 

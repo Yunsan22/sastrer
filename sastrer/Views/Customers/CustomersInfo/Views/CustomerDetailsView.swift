@@ -45,6 +45,9 @@ struct CustomerDetailsView: View {
                     .padding(.bottom,200)
                     .opacity(appear[2] ? 1 : 0)
             }
+            .coordinateSpace(name: "scroll") //coordination space is added here so the background doesnt get blurring when selecting the item of the search
+            .onAppear {model.showDetails = true}
+            .onDisappear{model.showDetails = false }
             .mask(RoundedRectangle(cornerRadius: viewState.width / 3,style: .continuous))
             .shadow(color: .black.opacity(0.3),radius: 30,x:0,y: 10)
             .scaleEffect(viewState.width / -500 + 1 )
@@ -87,7 +90,7 @@ struct CustomerDetailsView: View {
     
     var cover: some View {
         GeometryReader { proxy in
-            let scrollY = proxy.frame(in: .global).minY
+            let scrollY = proxy.frame(in: .named("scroll")).minY
             
             VStack{
                 Spacer()
@@ -178,10 +181,10 @@ struct CustomerDetailsView: View {
                 .frame(maxWidth: .infinity,
                        alignment: .center)
                 .matchedGeometryEffect(id: "title\(dashorButtons.id)", in: namespace)
-            Text(dashorButtons.ButtonSubtitle.uppercased())
-                .font(.largeTitle.weight(.bold))
-                .frame(maxWidth: .infinity,alignment: .center)
-                .matchedGeometryEffect(id: "subtitle\(dashorButtons.id)", in: namespace)
+//            Text(dashorButtons.ButtonSubtitle.uppercased())
+//                .font(.largeTitle.weight(.bold))
+//                .frame(maxWidth: .infinity,alignment: .center)
+//                .matchedGeometryEffect(id: "subtitle\(dashorButtons.id)", in: namespace)
         }
             .padding(20)
             .background(

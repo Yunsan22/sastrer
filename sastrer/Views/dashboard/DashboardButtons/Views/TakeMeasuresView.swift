@@ -21,10 +21,10 @@ struct TakeMeasuresView: View {
                     .frame(maxWidth: .infinity,
                            alignment: .center)
                     .matchedGeometryEffect(id: "title\(dashorButtons.id)", in: namespace)
-                Text(dashorButtons.ButtonSubtitle.uppercased())
-                    .font(.largeTitle.weight(.bold))
-                    .frame(maxWidth: .infinity,alignment: .center)
-                    .matchedGeometryEffect(id: "subtitle\(dashorButtons.id)", in: namespace)
+//                Text(dashorButtons.ButtonSubtitle.uppercased())
+//                    .font(.largeTitle.weight(.bold))
+//                    .frame(maxWidth: .infinity,alignment: .center)
+//                    .matchedGeometryEffect(id: "subtitle\(dashorButtons.id)", in: namespace)
                 
                 
                 

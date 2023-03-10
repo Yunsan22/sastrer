@@ -10,4 +10,11 @@ import Combine
 
 class Model : ObservableObject {
     @Published var showDetails: Bool = false
+    @Published var selectedModel: Modal = .signIn
+}
+
+enum Modal: String {
+    case signUp
+    case signIn
+    case resetpassword
 }

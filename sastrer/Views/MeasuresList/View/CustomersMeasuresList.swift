@@ -55,11 +55,11 @@ struct CustomersMeasuresList: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem {
-                    Button {
-                        presentationMode.wrappedValue.dismiss()
-                    } label: {
-                        Text("Done").bold()
-                    }
+//                    Button {
+//                        presentationMode.wrappedValue.dismiss()
+//                    } label: {
+//                        Text("Done").bold()
+//                    }
                 }
             }
             

@@ -11,6 +11,7 @@ struct BlobView: View {
     var body: some View {
         Canvas { context, size in
             context.fill(path(in: CGRect(x: 0,y: 0, width: size.width, height: size.height)), with: .linearGradient(Gradient(colors: [.pink,.blue]), startPoint: CGPoint(x:0,y:0), endPoint: CGPoint(x:400,y:400)))
+            
         }
         .frame(width: 420,height: 558)
         .foregroundStyle(.linearGradient(Gradient(colors: [.pink,.blue]), startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -51,4 +52,5 @@ struct BlobShape: Shape {
         path.closeSubpath()
         return path
     }
+    
 }

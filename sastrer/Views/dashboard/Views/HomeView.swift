@@ -18,6 +18,9 @@ struct HomeView: View {
     @State var show = false
     @State var showStatusBar = true
     @State var selectedID = UUID()
+    @State var showITemsDue = false
+    @State var selectedIndex = 0
+    
     @EnvironmentObject var model: Model
     
     @State private var displayPopupMessage: Bool = false
@@ -77,6 +80,7 @@ struct HomeView: View {
                 details
             }
         }
+//        .onDisappear { show.toggle()}
         .statusBarHidden(!showStatusBar)
         .onChange(of: show) { newValue in
             withAnimation(.closeCard ) {
@@ -107,7 +111,7 @@ struct HomeView: View {
     }
     var itemsDue: some View {
         TabView {
-            ForEach(itemsDueArray) { itemsdue in
+            ForEach(Array(itemsDueArray.enumerated()),id: \.offset) { index,  itemsdue in
                 GeometryReader { proxy in
                     let minX = proxy.frame(in: .global).minX
                     ItemsDue(itemsdue: itemsdue)
@@ -133,6 +137,10 @@ struct HomeView: View {
                                     .offset(x:140,y:-40)
                             }
                         )
+                        .onTapGesture {
+                            showITemsDue = true
+                            selectedIndex = index
+                        }
 //                        .blur(radius: abs(minX / 40 ))
                 }
             }
@@ -144,6 +152,11 @@ struct HomeView: View {
                 .rotationEffect(.degrees(135))
                 .offset(x:-100,y:-200)
         )
+        .sheet(isPresented: $showITemsDue) {
+            
+            ItemsDueListView(namespace: namespace, show: $show,itemDue: itemsDueArray[selectedIndex])
+            
+        }
     }
     var cards:some View {
         ForEach(dashboardButtons) { dashButtonItem in

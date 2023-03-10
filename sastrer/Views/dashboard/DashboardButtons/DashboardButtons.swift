@@ -39,9 +39,9 @@ struct DashorButtons: Identifiable {
 
 var dashboardButtons = [
 
-    DashorButtons(buttonTittle: "Take Measures", ButtonSubtitle: "", background: "bckgrndBtn", background1: "measurement",background2: "measuring",background3: "",background4: "Rectangle_113-removebg-preview"),
-    DashorButtons(buttonTittle: "New Job", ButtonSubtitle: "", background: "bckgrndBtn", background1: "measurement",background2: "sawingjob",background3: "",background4: "Rectangle_113-removebg-preview"),
-    DashorButtons(buttonTittle: "Jobs Delivered", ButtonSubtitle: "", background: "bckgrndBtn", background1: "measurement",background2: "show2",background3: "", background4: "")
+    DashorButtons(buttonTittle: "Take Measures", ButtonSubtitle: "Take new customers information and measurements", background: "bckgrndBtn", background1: "measurement",background2: "measuring",background3: "",background4: "Rectangle_113-removebg-preview"),
+    DashorButtons(buttonTittle: "New Job", ButtonSubtitle: "Make a new Job and assign when it is due", background: "bckgrndBtn", background1: "measurement",background2: "sawingjob",background3: "",background4: "Rectangle_113-removebg-preview"),
+    DashorButtons(buttonTittle: "Jobs Delivered", ButtonSubtitle: "Good times, the jobs shown here were all finished", background: "bckgrndBtn", background1: "measurement",background2: "show2",background3: "", background4: "")
 ]
 
 //butons to take measurements
