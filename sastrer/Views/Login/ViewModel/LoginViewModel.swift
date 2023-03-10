@@ -7,6 +7,9 @@
 
 import Foundation
 import Combine
+import FirebaseCore
+import FirebaseAuth
+import GoogleSignIn
 
 enum LoginState {
     case sucessfull
@@ -32,6 +35,7 @@ final class LoginViewModelImpl: ObservableObject, LoginViewModel {
     @Published var credentials: LoginCredentials = LoginCredentials.new
     
     private var loginsubscription = Set<AnyCancellable>()
+    private var googleLogingSubscription = Set<AnyCancellable>()
     
     let service: LoginService
     
@@ -55,6 +59,21 @@ final class LoginViewModelImpl: ObservableObject, LoginViewModel {
             }
             .store(in: &loginsubscription)
 
+    }
+    func signInWithGoogle() {
+        service
+            .signInWithGoogle()
+            .sink { res in
+
+                switch res {
+                case .failure(let err):
+                    self.state = .failed(error: err)
+                default: break
+                }
+            } receiveValue: { [weak self] in
+                self?.state = .sucessfull
+            }
+            .store(in: &loginsubscription)
     }
 }
 

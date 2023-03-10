@@ -101,6 +101,26 @@ struct AltLoginView: View {
                 .foregroundColor(.secondary)
                 .tint(.secondary)
                 
+                Button {
+                    vm.signInWithGoogle()
+                } label: {
+                    HStack {
+                        Image("Google")
+                            .padding(.vertical,5)
+                            .padding(.horizontal,20)
+//                            .background(Color.white)
+                        Text("Login with Google")
+                            .frame(maxWidth: .infinity)
+                    }
+                    
+//
+                }
+                .font(.headline)
+                .blendMode(.overlay)
+                .buttonStyle(.angular)
+                .tint(.blue)
+                .controlSize(.regular)
+                .shadow(color: Color("Shadow").opacity(0.2), radius: 30,x:0,y:30)
             }
             .opacity(appear[2] ? 1 : 0)
             .offset(y:appear[2] ? 0 : 20)

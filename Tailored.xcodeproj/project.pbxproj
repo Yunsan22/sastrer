@@ -100,6 +100,7 @@
 		BDD15A3B29BAECC000171A44 /* AngularButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A3A29BAECC000171A44 /* AngularButtonStyle.swift */; };
 		BDD15A3D29BAFA4A00171A44 /* InputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A3C29BAFA4900171A44 /* InputStyle.swift */; };
 		BDD15A4029BB071500171A44 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A3F29BB071500171A44 /* ModalView.swift */; };
+		BDD15A4229BB54BA00171A44 /* +View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A4129BB54BA00171A44 /* +View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,7 @@
 		BDD15A3A29BAECC000171A44 /* AngularButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngularButtonStyle.swift; sourceTree = "<group>"; };
 		BDD15A3C29BAFA4900171A44 /* InputStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStyle.swift; sourceTree = "<group>"; };
 		BDD15A3F29BB071500171A44 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		BDD15A4129BB54BA00171A44 /* +View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+View.swift"; sourceTree = "<group>"; };
 		D5E1AF77715032EF012428A5 /* Pods-Tailored-TailoredUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tailored-TailoredUITests.release.xcconfig"; path = "Target Support Files/Pods-Tailored-TailoredUITests/Pods-Tailored-TailoredUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DA032119818BD039592836F7 /* Pods_TailoredTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TailoredTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E187D77E4CBA46EB18407D88 /* Pods_Tailored.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tailored.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -648,6 +650,7 @@
 				BDD15A1E29AF790900171A44 /* DashboardSearchSugestion.swift */,
 				BDD15A3A29BAECC000171A44 /* AngularButtonStyle.swift */,
 				BDD15A3C29BAFA4900171A44 /* InputStyle.swift */,
+				BDD15A4129BB54BA00171A44 /* +View.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1155,6 +1158,7 @@
 				BDB852F32999CC6C00E82E34 /* RegistrationDetails.swift in Sources */,
 				BDD15A2629B2A35100171A44 /* LaunchScreenManager.swift in Sources */,
 				BDCE71EA2996E7CA00A16560 /* ProfileView.swift in Sources */,
+				BDD15A4229BB54BA00171A44 /* +View.swift in Sources */,
 				BDB852EC29999CB000E82E34 /* RegisterView.swift in Sources */,
 				BDD15A1F29AF790900171A44 /* DashboardSearchSugestion.swift in Sources */,
 				BDCE71802996B80C00A16560 /* SuitMeasuresService.swift in Sources */,
