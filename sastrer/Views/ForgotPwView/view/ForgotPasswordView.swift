@@ -12,7 +12,7 @@ struct ForgotPasswordView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject private var vm = ForgotPasswordViewModelImpl(service: ForgotPasswordServiceImpl()
     )
-    
+    @State var appear = [ false,false,false]
     
     @EnvironmentObject var model: Model
     
@@ -20,38 +20,44 @@ struct ForgotPasswordView: View {
         VStack {
             Text("Reset Password")
                 .font(.largeTitle).bold()
+                .opacity(appear[0] ? 1 : 0)
+                .offset(y:appear[0] ? 0 : 20)
             Text("Need to reset your accounts's password?")
                 .font(.headline)
-            
-            TextField("Email", text: $vm.email)
-                .inputStyle(icon: "envelope.badge.shield.half.filled.fill")
-                .textContentType(.emailAddress)
-                .keyboardType(.emailAddress)
-                .autocapitalization(.none)
-                .disableAutocorrection(true)
-           
-            HStack {
-//                Spacer()
-                Text("Please allow a few minutes to recieve the email")
-            }
-            .font(.footnote)
-            .foregroundColor(.secondary)
-            .tint(.secondary)
-            
-            Button {
-                //Handle password rese action
-                vm.sendPasswordReset()
-            } label: {
-                Text("Send Password Reset Link")
-                    .frame(maxWidth: .infinity)
-            }
-            .font(.headline)
-            .blendMode(.overlay)
-            .buttonStyle(.angular)
-            .tint(.blue)
-            .controlSize(.large)
-            
+                .opacity(appear[1] ? 1 : 0)
+                .offset(y:appear[1] ? 0 : 20)
+                .frame(maxWidth: .infinity)
+                .multilineTextAlignment(.leading)
             Group {
+                TextField("Email", text: $vm.email)
+                    .inputStyle(icon: "envelope.badge.shield.half.filled.fill")
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                
+                HStack {
+                    //                Spacer()
+                    Text("Please allow a few minutes to recieve the email")
+                }
+                .font(.footnote)
+                .foregroundColor(.secondary)
+                .tint(.secondary)
+                
+                Button {
+                    //Handle password rese action
+                    vm.sendPasswordReset()
+                } label: {
+                    Text("Send Password Reset Link")
+                        .frame(maxWidth: .infinity)
+                }
+                .font(.headline)
+                .blendMode(.overlay)
+                .buttonStyle(.angular)
+                .tint(.blue)
+                .controlSize(.large)
+                
+                
                 Divider()
                 
                 HStack {
@@ -63,10 +69,12 @@ struct ForgotPasswordView: View {
                     }
                     
                 }
+                .font(.footnote)
+                .foregroundColor(.secondary)
+                    .tint(.secondary)
             }
-            .font(.footnote)
-            .foregroundColor(.secondary)
-                .tint(.secondary)
+            .opacity(appear[2] ? 1 : 0)
+            .offset(y:appear[2] ? 0 : 20)
                 
             
         }
@@ -90,7 +98,18 @@ struct ForgotPasswordView: View {
             }
         
         )
-        
+        .onAppear{
+            withAnimation(.spring().delay(0.1)) {
+                appear[0] = true
+            }
+            withAnimation(.spring().delay(0.2)) {
+                appear[1] = true
+            }
+            withAnimation(.spring().delay(0.3)) {
+                appear[2] = true
+            }
+            
+        }
         
     }
 
