@@ -117,7 +117,7 @@ Sastreilor will allow tailors all around the world to ditch their notebooks by a
 ![](https://i.imgur.com/kZ0jN5C.gif)
 
 ## SignIm,SignUP and Reset Password
-
+|Improved version|
 | ---|
 |![](https://i.imgur.com/FOrHNHg.gif)|
 
