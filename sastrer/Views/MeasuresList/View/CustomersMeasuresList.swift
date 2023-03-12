@@ -19,6 +19,7 @@ struct CustomersMeasuresList: View {
     @EnvironmentObject var sessionService: SessionServiceImpl
     
     @Environment(\.isSearching) var isSearching
+    @Environment(\.dismissSearch) var dismissSearch
     @ObservedObject var models = ClientViewModel()
 
     
@@ -27,11 +28,11 @@ struct CustomersMeasuresList: View {
         NavigationView {
             List {
 //                ForEach(models.clientInfo.filter{( $0.fullName.localizedCaseInsensitiveContains(self.text))}, id: \.id) {
-                ForEach(models.clientInfo.filter{(self.text.isEmpty ? true : $0.fullName.localizedCaseInsensitiveContains(self.text) )}) {
+                ForEach(models.clientInfo.filter{(self.text.isEmpty ? true : $0.fullName.localizedCaseInsensitiveContains(self.text) || text == "" )}) {
                 dashItem in
                     NavigationLink {
-                        //TODO: here goes the details view showing measuremens and customer info
-                        Text(dashItem.lasName ) //this was added for testing
+                        //TODO: here will have the details view showing measuremens and customer info
+                        Text(dashItem.lasName ) //this is added for testing
                     } label: {
                         Text(dashItem.fullName) //display full name 
                     }
@@ -92,10 +93,10 @@ struct CustomersMeasuresList: View {
             .onAppear {
                 models.search()
             }
-            .onChange(of: text, perform: { newValue in
+            .onChange(of: text) { newValue in
                 models.search(with: newValue)
-            })
-            
+            }
+            //overlay with suggested no find
             .overlay {
                 if isSearching && models.clientInfo.isEmpty {
                     EmptyView(text: $text)
@@ -118,6 +119,10 @@ struct CustomersMeasuresList: View {
         }
     }
     
+    private func handleReset() {
+        text = ""
+        models.search()
+    }
 //    init() {
 //        models.getData()
 //    }

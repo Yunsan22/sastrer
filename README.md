@@ -16,7 +16,7 @@ Sastreilor will allow tailors all around the world to ditch their notebooks by a
 [Evaluation of your app across the following attributes]
 - **Category:** Fashion
 - **Mobile:** Sastreilor will be essential for people to track their jobs and store measurements in a centralized location to be easily access on their phone. the application will also send notifications when items are due to help them stay on course.
-- **Story:** This application came to live as an idea due to my father jobs nature, she is a fashion designer and has always strugle to be able to devilered his job. i have always seem how he gets barried in papers with different measurements, hence i thought it this will help him in his strugles and help others that might face this rpoblem as well in his line of work.
+- **Story:** This application came to live as an idea due to my father jobs nature, he is a fashion designer and has always strugle to be able to devilered his job on time and to keep his measurement file intact and easy to find. i have always seem how he gets barried in papers with different measurements, hence i thought it this will help him in his strugles and help others that might face this rpoblem as well in his line of work.
 - **Market:** Tailors are the main tarket for this application. 
 - **Habit:** this application will become a habit for its users beacuse it will make their work life much easier and organize. 
 - **Scope:** V1 allow users to login to their account, view a dashboard where they can get measurements see late jobs, view a list of all input customer measuremnts,see a list of to-do items and spand for additional details about the item clicked, be able to see their to do items in a calendar by daily view and monthly view. They will also be able to view and edit their profiles. 
@@ -27,17 +27,18 @@ Sastreilor will allow tailors all around the world to ditch their notebooks by a
 **Required Must-have Stories**
 
 
-- [ ] **Use four Fragments**
+- [x] **Use four Fragments**
 
-- [ ] **User can see Dashboard, customer measurments list,to-do items,a calendar view for the items due, and profile activity**
+- [x] **User can see Dashboard, customer measurments list,to-do items,a calendar view for the items due, and profile activity**
 
-- [ ] **User can input new measurements using textviews**
+- [x] **User can input new measurements using textviews**
 
-- [ ] **Use one of the Navigation UI Views (BottomNavigation, Drawer Layout, Top Bar) to navigate between fragments**
+- [x] **Use one of the Navigation UI Views (BottomNavigation, Drawer Layout, Top Bar) to navigate between fragments**
 
-- [ ] **Users' customers measurments are stored in a database**
+- [x] **Users' customers measurments are stored in a database**
+- [] **Users' customers measurments are stored in coredata, and then sent to database and sync when the app detects internet connectivity**
 
-- [ ] **Users can stay logged in after reopening app**
+- [x] **Users can stay logged in after reopening app**
 
 **Stretch Features**
 - [ ] **to be develovep**
@@ -46,7 +47,7 @@ Sastreilor will allow tailors all around the world to ditch their notebooks by a
 ### 2. Screen Archetypes
 
 - **Login Screen**
-  - User can input email and password to login to their account or be prompted to  signs up.
+  - User can input email and password to login to their account or be prompted to  signs up a reset password screen is also available.
   
 - **Stream screen** 
     
@@ -56,7 +57,8 @@ Sastreilor will allow tailors all around the world to ditch their notebooks by a
   - User can have a calendar view of to-do items
 
 - **Profile Screen**
-  - to be further develop
+  - Shows user Details and log out button
+  - Additional features to be develop
  
 
 
@@ -113,6 +115,11 @@ Sastreilor will allow tailors all around the world to ditch their notebooks by a
 <!--<img src="https://i.imgur.com/I2ScXQN.gif">-->
 
 ![](https://i.imgur.com/kZ0jN5C.gif)
+
+## SignIm,SignUP and Reset Password
+
+| ---|
+|![](https://i.imgur.com/FOrHNHg.gif)|
 
 ## Build Progres: Video Walkthrough
 
