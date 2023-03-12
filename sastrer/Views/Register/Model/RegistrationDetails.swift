@@ -11,8 +11,7 @@ struct RegistrationDetails {
     var email: String
     var password: String
     var confirmPassw: String
-    var firstName: String
-    var lastName: String
+    var fullName: String
     var uid: String
 }
 
@@ -23,8 +22,7 @@ extension RegistrationDetails {
         RegistrationDetails(email: "",
                             password: "",
                             confirmPassw: "",
-                            firstName: "",
-                            lastName: "",
+                            fullName: "",
                             uid: "")
     }
 }

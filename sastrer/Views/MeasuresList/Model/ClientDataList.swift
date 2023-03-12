@@ -8,9 +8,9 @@
 import Foundation
 
 struct ClientDataList: Identifiable {
-    
+   
     var id: String
-    var firstName: String
+    var fullName: String
     var comments: String
     var gender: String
     var lasName: String

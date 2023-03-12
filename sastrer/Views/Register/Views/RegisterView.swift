@@ -35,15 +35,12 @@ struct RegisterView: View {
                                            placeholder: "Confirm Password",
                                            sfSymbol: "lock")
                     Divider()
-                    InputTextFieldView(text: $vm.userDetails.firstName,
+                    InputTextFieldView(text: $vm.userDetails.fullName,
                                        placeholder: "First Name",
                                        keyboardType: .namePhonePad,
                                        sfSymbol: nil)
                     
-                    InputTextFieldView(text: $vm.userDetails.lastName ,
-                                       placeholder: "Last Name",
-                                       keyboardType: .namePhonePad,
-                                       sfSymbol: nil)
+                    
                     
                     
                 }

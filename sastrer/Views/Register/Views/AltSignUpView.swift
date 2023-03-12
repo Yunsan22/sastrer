@@ -39,14 +39,11 @@ struct AltSignUpView: View {
                     .inputStyle(icon: "lock.shield.fill")
                     .textContentType(.password)
                 
-                TextField("Name", text: $vm.userDetails.firstName)
+                TextField("Name", text: $vm.userDetails.fullName)
                     .inputStyle(icon: "person.crop.circle.fill")
                     .keyboardType(.namePhonePad)
                 
                 
-                TextField("Last Name", text: $vm.userDetails.lastName)
-                    .inputStyle(icon: "person.crop.circle.fill")
-                    .keyboardType(.namePhonePad)
                 
                 
                 Button {

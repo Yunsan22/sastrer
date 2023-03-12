@@ -13,6 +13,7 @@ struct ProfileView: View {
     
     
     @State var confirmLogout: Bool = false
+    @AppStorage("isLiteMode") var isLiteMode =  true
     
     @Environment(\.dismiss) private var dismiss
     @Environment(\.presentationMode) var presentationMode
@@ -23,6 +24,36 @@ struct ProfileView: View {
                 profile
                 
                 menu
+                
+                Section {
+                    Toggle(isOn: $isLiteMode) {
+                        Label("Lite Mode", systemImage: isLiteMode ? "tortoise" : "hare")
+                    }
+                }
+//                .tint(.primary)
+                
+                Button{
+                    //handle logout
+                    confirmLogout.toggle()
+                    
+                } label: {
+                    Text("LogOut")
+                }
+                
+                .tint(.red)
+                .alert(isPresented: $confirmLogout){
+                    Alert(title: Text("Warning"),
+                          message: Text("Are you sure you want to LogOut?"),
+                          primaryButton: .default(Text("Yes"), action: {
+                        sessionService.logout()
+                        handleDismissal()
+                    }),
+                          secondaryButton: .cancel(Text("No")
+                       
+                        //
+                    )
+                    )
+                }
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Profile")
@@ -36,6 +67,7 @@ struct ProfileView: View {
                 }
             }
         }
+        .preferredColorScheme(.dark)
     }
 
     var profile: some View {
@@ -53,7 +85,7 @@ struct ProfileView: View {
                     .font(.system(size: 200))
                     .offset(x: -50,y: -100)
                 )
-            Text("Hi \(sessionService.userDetails?.firstName ?? "N/A" )")
+            Text("Hi \(sessionService.userDetails?.fullName ?? "N/A" )")
                 .font(.title.weight(.semibold))
             HStack {
                 Image(systemName: "location")
@@ -61,27 +93,7 @@ struct ProfileView: View {
                 Text("USA")
                     .foregroundColor(.secondary)
             }
-            Button{
-                //handle logout
-                confirmLogout.toggle()
-                
-            } label: {
-                Text("LogOut")
-            }
-            .alert(isPresented: $confirmLogout){
-                Alert(title: Text("Warning"),
-                      message: Text("Are you sure you want to LogOut?"),
-                      primaryButton: .default(Text("Yes"), action: {
-                    sessionService.logout()
-                    handleDismissal()
-                }),
-                      secondaryButton: .cancel(Text("No")
-                   
-                    //
-                )
-                )
-            }
-            .clipped()
+           
         }
         .frame(maxWidth: .infinity)
         

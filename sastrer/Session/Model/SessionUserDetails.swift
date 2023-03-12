@@ -9,7 +9,6 @@ import Foundation
 
 struct SessionUserDetails {
     
-    let firstName: String
-    let lastName: String
+    let fullName: String
     let email: String
 }

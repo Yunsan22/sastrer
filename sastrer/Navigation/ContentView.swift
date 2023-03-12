@@ -13,6 +13,7 @@ struct ContentView: View {
     @EnvironmentObject var launchScreenManager: LaunchScreenManager
     
     @EnvironmentObject var sessionService: SessionServiceImpl
+    @Binding var text: String
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -21,7 +22,7 @@ struct ContentView: View {
                 case .homes:
                     HomeView()
                 case .measuresView:
-                    CustomersMeasuresList()
+                    CustomersMeasuresList(text: $text)
                 case .toDoss:
                     ToDoView()
                 case .calendarVi:
@@ -39,7 +40,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(text: .constant("pepe"))
             .environmentObject(SessionServiceImpl())
             .environmentObject(Model())
             .environmentObject(LaunchScreenManager())

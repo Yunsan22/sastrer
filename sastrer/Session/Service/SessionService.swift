@@ -65,11 +65,12 @@ private extension SessionServiceImpl {
             .addStateDidChangeListener { [weak self] res, usersdb in
                 guard let self = self else { return }
                 
+                let currenUser = Auth.auth().currentUser
                 
                 //is user verified
-                let verifiedUser = usersdb?.isEmailVerified
-                let verifiedUse =
-                self.state = verifiedUser != true ? .loggedOut : .loggedIn
+                let isVerifiedUser = usersdb?.isEmailVerified
+//                let verifiedUse =
+                self.state = isVerifiedUser != true ? .loggedOut : .loggedIn
                 
                 if let uid = usersdb?.uid {
                     
@@ -101,14 +102,12 @@ private extension SessionServiceImpl {
                     
                           //get all the documents and customer info
                           let data = snapshot.data()
-                          let firstName = data?[RegistrationKeys.firstName.rawValue] as? String
-                          let lastName = data?[RegistrationKeys.lastName.rawValue] as? String
+                          let fullName = data?[RegistrationKeys.fullName.rawValue] as? String
                             let email = data?[RegistrationKeys.email.rawValue] as? String
                     //update the list property in the main thread
                     DispatchQueue.main.async {
-                        self.userDetails = SessionUserDetails(firstName: firstName!,
-                                                              lastName: lastName!,
-                                                              email: email!)
+                        self.userDetails = SessionUserDetails(fullName: fullName ?? "",
+                                                              email: email ?? "")
                         
 
                     }
@@ -147,8 +146,7 @@ private extension SessionServiceImpl {
             let profilePicUrl = user.profile?.imageURL(withDimension: 320)
             
             DispatchQueue.main.async {
-                self.userDetails = SessionUserDetails(firstName: fullName!,
-                                                      lastName: familyName!,
+                self.userDetails = SessionUserDetails(fullName: fullName!,
                                                       email: emailAddress!)
                 
 

@@ -12,8 +12,7 @@ import FirebaseStorage
 import FirebaseDatabase
 
 enum RegistrationKeys: String {
-    case firstName
-    case lastName
+    case fullName
     case email
     case uid
     
@@ -50,8 +49,7 @@ final class RegistrationServiceImpl: RegistrationService {
                        
                         if let uid = result?.user.uid {
                             
-                            let values = [RegistrationKeys.firstName.rawValue:details.firstName,
-                                          RegistrationKeys.lastName.rawValue: details.lastName,
+                            let values = [RegistrationKeys.fullName.rawValue:details.fullName,
                                           RegistrationKeys.email.rawValue: details.email,
                                           RegistrationKeys.uid.rawValue: uid]
                             

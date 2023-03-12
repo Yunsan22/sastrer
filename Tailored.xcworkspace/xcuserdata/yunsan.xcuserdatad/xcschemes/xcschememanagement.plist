@@ -6,8 +6,10 @@
 	<dict>
 		<key>Promises (Playground) 1.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>28</integer>
+			<integer>27</integer>
 		</dict>
 		<key>Promises (Playground) 10.xcscheme</key>
 		<dict>
@@ -65,8 +67,10 @@
 		</dict>
 		<key>Promises (Playground) 2.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>29</integer>
+			<integer>28</integer>
 		</dict>
 		<key>Promises (Playground) 20.xcscheme</key>
 		<dict>
@@ -112,8 +116,10 @@
 		</dict>
 		<key>Promises (Playground).xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>27</integer>
+			<integer>26</integer>
 		</dict>
 	</dict>
 </dict>

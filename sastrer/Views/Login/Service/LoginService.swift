@@ -12,6 +12,14 @@ import FirebaseCore
 import FirebaseAuth
 import GoogleSignIn
 
+
+enum GoogleRegistrationKeys: String {
+    case fullName
+    case email
+    case uid
+    
+}
+
 protocol LoginService {
     func login(with Credentials: LoginCredentials) -> AnyPublisher<Void,Error>
     func signInWithGoogle() -> AnyPublisher<Void,Error>
@@ -56,9 +64,60 @@ final class LoginServiceImpl: LoginService {
                         }
                         // User is signed in
                         promise(.success(()))
-                        guard let user = authResult?.user else { return }
+//                        print("whoooooo \(user.displayName)")
+                            
+                        if let uid = authResult?.user.uid {
+                            //create the values of the dB here
+                            guard  (authResult?.user) != nil else { return}
+//
+                            guard let email = user?.profile?.email else { return }
+//
+                            guard let fullName = user?.profile?.name else { return }
+//                            guard let givenName = user.profile?.givenName else {  return }
+                            guard  let familyName = user?.profile?.familyName else { return}
+//
+                            guard let profilePicUrl = user?.profile?.imageURL(withDimension: 320) else { return }
+//
+                            let values = [GoogleRegistrationKeys.fullName.rawValue: fullName,
+                                          GoogleRegistrationKeys.email.rawValue: email,
+                                          GoogleRegistrationKeys.uid.rawValue: uid]
+
+
+                            let db = Firestore.firestore()
+
+                            let  usersRef = db
+                            usersRef
+                                .collection("users").document(uid)
+                                .setData(values) { (error) in
+                                if let err = error  {
+                                    print("an err to create document \(err.localizedDescription)")
+                                    promise(.failure(err))
+                                    //below is an alert when there is an error  creating the DB
+                                    //                                        self.popSimpleAlert("Alert", messeage: "failed to saved the values \(String(describing: error?.localizedDescription))")
+                                }
+                                print("verification sent")
+                                print("user register")
+                                    promise(.success(()))
+
+                            }
+                            //go back to sign in vc
+//                            print("user register")
+
+                            //                                let alert = UIAlertController(title: "Alert", message: "you have registered, please verify your email", preferredStyle: .alert)
+                            //                                self.present(alert,animated: true)
+                            //                                let okAction = UIAlertAction(title: "OK", style: .default) {
+                            //                                    (action: UIAlertAction!) in
+                            //                                    self.dismiss(animated: true)
+                            //                                }
+                            //                                alert.addAction(okAction)
+
+                        }
+                        else {
+                            print("something happend")
+                            promise(.failure(NSError(domain: "Invalid User Id", code: 0,userInfo: nil)))
+                        }
 //                        self.performSegue(withIdentifier: "loginSegue", sender: nil)
-                        print("whoooooo \(user.displayName)")
+                        
                         // ...
                     }
                 }
@@ -70,13 +129,7 @@ final class LoginServiceImpl: LoginService {
         .eraseToAnyPublisher()
     }
     
-    func signInWithGoogle()  {
-       
-                
-               
-                
-      
-    }
+   
     
     func login(with Credentials: LoginCredentials) -> AnyPublisher<Void, Error> {
         
@@ -102,7 +155,7 @@ final class LoginServiceImpl: LoginService {
         //                    self.showError(error!.localizedDescription)
                     }
                     else {
-                        //go into gome
+                        //go into home
 //                        promise(.success(()))
                         
                         let user = authResult!.user

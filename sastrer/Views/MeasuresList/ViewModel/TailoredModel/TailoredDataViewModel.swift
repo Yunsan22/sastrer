@@ -13,7 +13,10 @@ class ClientViewModel: ObservableObject {
     
     @Published var clientInfo = [ClientDataList]()
     
-//    var suggested: ClientDataList = []
+
+    init() {
+        getData()
+    }
     
     func getData () {
         
@@ -36,8 +39,8 @@ class ClientViewModel: ObservableObject {
                             self.clientInfo = snapshot.documents.map { d in
                                 
                                 // create a client list for each document return
-                                return ClientDataList(id: d.documentID,
-                                                      firstName: d["firstName"] as? String ?? "",
+                                return ClientDataList( id: d.documentID,
+                                                      fullName: d["firstName"] as? String ?? "",
                                                       comments: d["comments"] as? String ?? "",
                                                       gender: d["gender"] as? String ?? "",
                                                       lasName: d["lasName"] as? String ?? "",
@@ -55,5 +58,9 @@ class ClientViewModel: ObservableObject {
                 }
                 print("this is clients info \(self.clientInfo)")
             }
+    }
+    
+    func search(with text: String = "") {
+        clientInfo = text.isEmpty ? clientInfo : clientInfo.filter { $0.fullName.contains(text)}
     }
 }

@@ -10,6 +10,9 @@
 		1E49972C0322F77431CBD725 /* Pods_Tailored.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E187D77E4CBA46EB18407D88 /* Pods_Tailored.framework */; };
 		212C96B40B78B0A626DB8603 /* Pods_Tailored_TailoredUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC49751FE2BD425B090D8346 /* Pods_Tailored_TailoredUITests.framework */; };
 		9EFC13EF6E570690FB4C6FC9 /* Pods_TailoredTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA032119818BD039592836F7 /* Pods_TailoredTests.framework */; };
+		BDA2A89429BCAE3C007870A3 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2A89329BCAE3C007870A3 /* CircleView.swift */; };
+		BDA2A89629BCB0F7007870A3 /* DetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2A89529BCB0F7007870A3 /* DetailsSection.swift */; };
+		BDA2A89829BD3580007870A3 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2A89729BD3580007870A3 /* EmptyView.swift */; };
 		BDB852E02997C4AC00E82E34 /* DashboardButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB852DF2997C4AC00E82E34 /* DashboardButtons.swift */; };
 		BDB852E4299912FE00E82E34 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB852E3299912FE00E82E34 /* LoginView.swift */; };
 		BDB852E62999147000E82E34 /* InputPasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB852E52999147000E82E34 /* InputPasswordFieldView.swift */; };
@@ -127,6 +130,9 @@
 		71ED193BB6FE1CFCF71B617E /* Pods-TailoredTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TailoredTests.debug.xcconfig"; path = "Target Support Files/Pods-TailoredTests/Pods-TailoredTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81730B2CB1D9DFF780A40086 /* Pods-Tailored.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tailored.debug.xcconfig"; path = "Target Support Files/Pods-Tailored/Pods-Tailored.debug.xcconfig"; sourceTree = "<group>"; };
 		BC49751FE2BD425B090D8346 /* Pods_Tailored_TailoredUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tailored_TailoredUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDA2A89329BCAE3C007870A3 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		BDA2A89529BCB0F7007870A3 /* DetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSection.swift; sourceTree = "<group>"; };
+		BDA2A89729BD3580007870A3 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		BDB852DF2997C4AC00E82E34 /* DashboardButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardButtons.swift; sourceTree = "<group>"; };
 		BDB852E3299912FE00E82E34 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BDB852E52999147000E82E34 /* InputPasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordFieldView.swift; sourceTree = "<group>"; };
@@ -651,6 +657,8 @@
 				BDD15A3A29BAECC000171A44 /* AngularButtonStyle.swift */,
 				BDD15A3C29BAFA4900171A44 /* InputStyle.swift */,
 				BDD15A4129BB54BA00171A44 /* +View.swift */,
+				BDA2A89329BCAE3C007870A3 /* CircleView.swift */,
+				BDA2A89529BCB0F7007870A3 /* DetailsSection.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -733,6 +741,7 @@
 			isa = PBXGroup;
 			children = (
 				BDD15A1429AEA91E00171A44 /* CustomersMeasuresList.swift */,
+				BDA2A89729BD3580007870A3 /* EmptyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1117,6 +1126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDD15A1529AEA91E00171A44 /* CustomersMeasuresList.swift in Sources */,
+				BDA2A89629BCB0F7007870A3 /* DetailsSection.swift in Sources */,
 				BDB852F029999FA400E82E34 /* ForgotPasswordView.swift in Sources */,
 				BDB852F9299AE38C00E82E34 /* RegistrationViewModel.swift in Sources */,
 				BDCE71B12996BA7000A16560 /* SuitMeasuresDetails.swift in Sources */,
@@ -1135,6 +1145,7 @@
 				BDCE71CA2996BEEB00A16560 /* InputTextFieldView.swift in Sources */,
 				BDCE717D2996B79A00A16560 /* SuitMeasuresViewModel.swift in Sources */,
 				BDCE71DD2996C15800A16560 /* MenSuitsMeasuresView.swift in Sources */,
+				BDA2A89829BD3580007870A3 /* EmptyView.swift in Sources */,
 				BDB852F62999CD1200E82E34 /* RegistrationService.swift in Sources */,
 				BDCE71EC2996EADA00A16560 /* Tab.swift in Sources */,
 				BDCE71C12996BCEC00A16560 /* CustomerCreationViewModel.swift in Sources */,
@@ -1160,6 +1171,7 @@
 				BDCE71EA2996E7CA00A16560 /* ProfileView.swift in Sources */,
 				BDD15A4229BB54BA00171A44 /* +View.swift in Sources */,
 				BDB852EC29999CB000E82E34 /* RegisterView.swift in Sources */,
+				BDA2A89429BCAE3C007870A3 /* CircleView.swift in Sources */,
 				BDD15A1F29AF790900171A44 /* DashboardSearchSugestion.swift in Sources */,
 				BDCE71802996B80C00A16560 /* SuitMeasuresService.swift in Sources */,
 				BDCE71502996B46400A16560 /* ContentView.swift in Sources */,

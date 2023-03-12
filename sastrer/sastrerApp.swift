@@ -29,6 +29,7 @@ struct sastrerApp: App {
     @StateObject var sessionService = SessionServiceImpl()
     @StateObject var launchScreenManager = LaunchScreenManager()
    @StateObject var model = Model()
+    @State var text = ""
     
     init(){
         FirebaseApp.configure()
@@ -39,7 +40,7 @@ struct sastrerApp: App {
                 NavigationView {
                     switch sessionService.state {
                     case .loggedIn:
-                        ContentView()
+                        ContentView(text: $text)
                             
                     case .loggedOut:
 //                      
