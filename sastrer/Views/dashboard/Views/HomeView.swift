@@ -175,12 +175,22 @@ struct HomeView: View {
         }
     }
     var details: some View {
-        ForEach(dashboardButtons) { buttonItem in
-            if buttonItem.id == selectedID {
-                CustomerDetailsView(namespace: namespace, shouldShowDashboard: $show,dashorButtons: buttonItem)
-                    .zIndex(1)
-                    .transition(.asymmetric(insertion: .opacity.animation(.easeInOut(duration: 0.1)), removal: .opacity.animation(.easeInOut(duration: 0.3).delay(0.2))))
+        ForEach(Array(dashboardButtons.enumerated()),id: \.offset ) { index, buttonItem in
+            
+            //trying to use index to put another view in the other button
+            if index == 0 && buttonItem.id == selectedID {
+                
+                    CustomerDetailsView(namespace: namespace, shouldShowDashboard: $show,dashorButtons: buttonItem)
+                        .zIndex(1)
+                        .transition(.asymmetric(insertion: .opacity.animation(.easeInOut(duration: 0.1)), removal: .opacity.animation(.easeInOut(duration: 0.3).delay(0.2))))
+                
             }
+            else if index == 1 && buttonItem.id == selectedID {
+
+                NewJobsDetailsView(namespace: namespace,shouldShowDashboard: $show)
+
+            }
+           
         }
     }
 }

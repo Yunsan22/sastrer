@@ -1,21 +1,19 @@
 //
-//  CustomerDetailsView.swift
-//  sastrer
+//  SectionView.swift
+//  Tailored
 //
-//  Created by Yunior Sanchez on 2/10/23.
+//  Created by Yunior Sanchez on 3/12/23.
 //
 
 import SwiftUI
 
-struct CustomerDetailsView: View {
+struct SectionView: View {
     
     @StateObject private var viewModel = CustomerCreationViewModelImpl(
         service: CustDetailsAndMeasuresServiceImpl()
     )
     
-    var namespace: Namespace.ID
-    @Binding var shouldShowDashboard: Bool
-    var dashorButtons: DashorButtons = dashboardButtons[0]
+    var sectionButtons: DashButtons = buttonDetails[0]
     @EnvironmentObject var model: Model
     
     @State private var displayPopupMessage: Bool = false
@@ -26,58 +24,29 @@ struct CustomerDetailsView: View {
     
     @State var showStatusBar = true
     
-    @State var appear = [false,false,false]
     
     @Environment(\.dismiss) private var dismiss
     @Environment(\.presentationMode) var presentationMode
     
-    @State var viewState:  CGSize = .zero
-    @State var isDragable = true
+   
+  
     
-    @State var ShowSection =  false
-    @State var selecteIndex = 0
     
     var body: some View {
         
         ZStack{
             ScrollView {
                 cover
-                contentCustomerPrimaryInfo
+                content
                     .offset(y:80)
                     .padding(.bottom,200)
-                    .opacity(appear[2] ? 1 : 0)
+                    
             }
-            .coordinateSpace(name: "scroll") //coordination space is added here so the background doesnt get blurring when selecting the item of the search
-            .onAppear {model.showDetails = true}
-            .onDisappear{model.showDetails = false }
-            .mask(RoundedRectangle(cornerRadius: viewState.width / 3,style: .continuous))
-            .shadow(color: .black.opacity(0.3),radius: 30,x:0,y: 10)
-            .scaleEffect(viewState.width / -500 + 1 )
-            .background(.black.opacity(viewState.width / 500))
-            .background(.ultraThinMaterial)
-            .gesture(isDragable ? drag : nil )
             .ignoresSafeArea()
             
             button
             
             
-        }
-        .onAppear {
-            fadeIn()
-        }
-        .onChange(of: shouldShowDashboard, perform: { newValue in
-            fadeOut()
-        })
-        .statusBarHidden(!showStatusBar)
-        .onChange(of: ShowSection) { newValue in
-            withAnimation(.closeCard ) {
-                if newValue {
-                    showStatusBar = false
-                } else {
-                    showStatusBar = true
-                }
-            }
-
         }
         .background(
             ZStack{
@@ -88,60 +57,59 @@ struct CustomerDetailsView: View {
 
             })
         .preferredColorScheme(.dark)
+        .statusBarHidden(!showStatusBar)
+        
     }
     
     var cover: some View {
-        GeometryReader { proxy in
-            let scrollY = proxy.frame(in: .named("scroll")).minY
-            
-            VStack{
-                Spacer()
-            }
-            .frame(maxWidth: .infinity)
-            .frame(height: scrollY > 0 ? 500 + scrollY : 500)
-            .foregroundStyle(.black)
-            .background(
-                Image(dashorButtons.background2)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(20)
-                    .frame(maxWidth: 500)
-                    .offset(y:60)
-                    .matchedGeometryEffect(id: "background2\(dashorButtons.id)", in: namespace)
-                    .offset(y: scrollY > 0 ? scrollY * -0.8: 0)
-            )
-            .background(
-                Image(dashorButtons.background)
-                    .resizable()
-                    .aspectRatio( contentMode: .fill)
-                    .matchedGeometryEffect(id: "bckgrnd\(dashorButtons.id)", in: namespace)
-                    .offset(y: scrollY > 0 ? -scrollY: 0 )
-                    .scaleEffect(scrollY > 0 ? scrollY / 1000 + 1 : 1 )
-                    .blur(radius: scrollY / 10)
-            )
-            .mask(
-                RoundedRectangle(cornerRadius: appear[0] ? 0 : 30,style: .continuous)
-                    .matchedGeometryEffect(id: "mask\(dashorButtons.id)", in: namespace)
-                    .offset(y:  scrollY > 0 ? -scrollY: 0 )
-            )
-            .overlay(
-                overlayContent
-                    .offset(y: scrollY > 0 ? scrollY * -0.6: 0 )
-            )
+        VStack{
+            Spacer()
         }
+        .frame(maxWidth: .infinity)
+        .frame(height:500)
+        .foregroundStyle(.black)
+        .background(
+            Image(sectionButtons.image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding(20)
+                .frame(maxWidth: 500)
+                .offset(y:60)
+            
+        )
+        .background(
+            Image(sectionButtons.background)
+                .resizable()
+                .aspectRatio( contentMode: .fill)
+            
+        )
+        .mask(
+            RoundedRectangle(cornerRadius: 0,style: .continuous)
+            
+        )
+        .overlay(
+            overlayContent
+            
+        )
         .frame(height: 500)
     }
+       
+  
     var button: some View {
-        //the below button will close the view
         Button {
-            withAnimation(.closeCard.delay(0.3)) {
-                shouldShowDashboard.toggle()
-                model.showDetails.toggle()
-                
-                print("Dis is customer details")
-                print("thisclicked")
+//            withAnimation(.closeCard) {
+            if viewModel.allFieldsEmpty {
+                withAnimation(.closeCard.delay(0.3)) {
+                  
+                    handleDismissal()
+               
+                }
+            } else {
+                displayPopupMessage.toggle()
             }
-            isDragable = false
+                
+//
+//            }
         } label: {
             Image(systemName: "xmark")
                 .font(.body.weight(.bold))
@@ -152,118 +120,62 @@ struct CustomerDetailsView: View {
             .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .topLeading)
             .padding(20)
             .ignoresSafeArea()
-
-    }
-    var contentCustomerPrimaryInfo: some View {
-        VStack(alignment: .leading){
-            ForEach(Array(buttonDetails.enumerated()),id: \.offset ) { index, section in
-                if index != 0 {  Divider() }
-                SectionRow(section: section)
-                    .onTapGesture {
-                        selecteIndex = index
-                        ShowSection = true
-                        showStatusBar = false
+            .alert(isPresented: $displayPopupMessage){
+                Alert(title: Text("Warning"),
+                      message: Text("All data will be deleted"),
+                      dismissButton: .default(Text("OK"), action: {
+                    withAnimation(.closeCard.delay(0.3)) {
+                      
+                        handleDismissal()
+                        
+                        print("Dis is customer details")
+                        print("thisclicked")
                     }
+                  
+                })
+                )
             }
-           
+    }
+    var content: some View {
+        VStack{
+            
+            clientInfo
+            address
+            butonview
+            clearAll
         }
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30,style: .continuous))
-        .strokeStyle(cornerRadius: 30)
-        .padding(20)
-        .fullScreenCover(isPresented: $ShowSection) {
-            SectionView(sectionButtons: buttonDetails[selecteIndex])
-        }
-//        .sheet(isPresented: $ShowSection) {
-//            SectionView(sectionButtons: buttonDetails[selecteIndex])
-//        }
+        
 
         
     }
     var overlayContent: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(dashorButtons.buttonTittle)
+            Text(sectionButtons.tittle)
                 .font(.largeTitle.weight(.bold))
                 .frame(maxWidth: .infinity,
                        alignment: .center)
-                .matchedGeometryEffect(id: "title\(dashorButtons.id)", in: namespace)
-//            Text(dashorButtons.ButtonSubtitle.uppercased())
-//                .font(.largeTitle.weight(.bold))
-//                .frame(maxWidth: .infinity,alignment: .center)
-//                .matchedGeometryEffect(id: "subtitle\(dashorButtons.id)", in: namespace)
+ 
         }
             .padding(20)
             .background(
                 Rectangle()
                     .fill(.ultraThinMaterial)
                     .mask(RoundedRectangle(cornerRadius: 30,style: .continuous))
-                    .matchedGeometryEffect(id: "blur\(dashorButtons.id)", in: namespace)
+                    
             )
             .offset(y:250)
             .padding(20)
     }
-    var drag: some Gesture {
-        DragGesture(minimumDistance: 30,coordinateSpace: .local)
-            .onChanged { value in
-                guard value.translation.width > 0 else { return}
-                
-                if value.startLocation.x < 100 {
-                    withAnimation(.closeCard) {
-                        viewState = value.translation
-                    }
-                }
-                
-            }
-            .onEnded { value in
-                
-                if viewState.width > 80 {
-                    displayPopupMessage.toggle()
-                } else {
-                    withAnimation(.closeCard) {
-                        viewState = .zero
-                    }
-                }
-                
-                
-            }
-    }
-    func fadeIn(){
-        withAnimation(.easeOut.delay(0.3)) {
-            appear[0] = true
-        }
-        withAnimation(.easeOut.delay(0.4)) {
-            appear[1] = true
-        }
-        withAnimation(.easeOut.delay(0.5)) {
-            appear[2] = true
-        }
-    }
-    func fadeOut(){
-        appear[0] = false
-        appear[1] = false
-        appear[2] = false
-    }
-    func close() {
-        withAnimation(.closeCard.delay(0.3)) {
-            displayPopupMessage.toggle()
-            
-        }
-        withAnimation(.closeCard) {
-            viewState = .zero
-        }
-    }
+   
 }
 
-struct MeasurementForm_Previews: PreviewProvider {
-    @Namespace static var namespace
-    
+struct SectionView_Previews: PreviewProvider {
     static var previews: some View {
-        //        MeasurementContentView{_ in}
-        CustomerDetailsView(namespace: namespace,shouldShowDashboard: .constant(true))
-            .environmentObject(Model() )
+        SectionView()
     }
 }
 
-private extension CustomerDetailsView {
+private extension SectionView {
     var clientInfo: some View {
         Section {
             InputTextFieldView(text: $viewModel.customerDetails.clientInfo.firstName, placeholder: "First Name", keyboardType: .default, sfSymbol: nil)
@@ -528,7 +440,7 @@ private extension CustomerDetailsView {
     
     
 }
-extension CustomerDetailsView {
+extension SectionView {
     func handleDismissal(){
         if #available(iOS 15, *) {
             dismiss()
@@ -537,4 +449,3 @@ extension CustomerDetailsView {
         }
     }
 }
-

@@ -27,29 +27,18 @@ struct CustomersMeasuresList: View {
         
         NavigationView {
             List {
-//                ForEach(models.clientInfo.filter{( $0.fullName.localizedCaseInsensitiveContains(self.text))}, id: \.id) {
                 ForEach(models.clientInfo.filter{(self.text.isEmpty ? true : $0.fullName.localizedCaseInsensitiveContains(self.text) || text == "" )}) {
                 dashItem in
                     NavigationLink {
                         //TODO: here will have the details view showing measuremens and customer info
-                        Text(dashItem.lasName ) //this is added for testing
+                        Text("LastName: \(dashItem.lasName)" ) //this is added for testing
+                        Text("This view will present all the customer information and measurments")
                     } label: {
                         Text(dashItem.fullName) //display full name 
                     }
                     
                 }
-                
-//                ForEach(models.clientInfo.filter{ $0.firstName.contains(text) || text == ""
-//                })
-//                { dashItem in
-//                    NavigationLink {
-//                        Text(dashItem.lasName )
-//                    } label: {
-//                        Text("\(dashItem.firstName) \(dashItem.lasName)")
-//                    }
-//
-//
-//                }
+
             }
             .preferredColorScheme(.dark)
             .searchable(text: $text,placement: .navigationBarDrawer(displayMode: .always),prompt: Text("Find a customer"))
@@ -60,29 +49,10 @@ struct CustomersMeasuresList: View {
                         Text(suggestion.fullName)
                             .searchCompletion(suggestion.fullName)
                     }
-//                    Button {
-//                        text = suggestion.firstName
-//                    } label: {
-//                        Text(suggestion.firstName)
-//                            .searchCompletion(suggestion.firstName)
-//                    }
+
                     
                 }
-//                if models.clientInfo.isEmpty {
-//                    let randomCustomer = models.clientInfo.randomElement()!.firstName
-//
-//                    Text("Maybe you are looking for \(randomCustomer)?").searchCompletion(randomCustomer )
-//                }
-//                                ForEach(clientSugestion) { suggestion in
-//
-//                                    Button {
-//                                        text = suggestion.text
-//                                    } label: {
-//                                        Text(suggestion.text)
-//                                            .searchCompletion(suggestion.text)
-//                                    }
-//
-//                                }
+
             }
             .refreshable {
                 models.getData()
@@ -102,17 +72,11 @@ struct CustomersMeasuresList: View {
                     EmptyView(text: $text)
                 }
             }
-//
-            
-            .navigationTitle("Search")
+            .navigationTitle("Measures")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem {
-//                    Button {
-//                        presentationMode.wrappedValue.dismiss()
-//                    } label: {
-//                        Text("Done").bold()
-//                    }
+                    //do not know if this will be needed
                 }
             }
             
@@ -131,6 +95,7 @@ struct CustomersMeasuresList: View {
 struct CustomersMeasuresList_Previews: PreviewProvider {
     static var previews: some View {
         CustomersMeasuresList(text: .constant("pepe"))
+            .environmentObject(ClientViewModel())
             
     }
 }

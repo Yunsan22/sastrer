@@ -4,7 +4,7 @@
 //
 //  Created by Yunior Sanchez on 3/10/23.
 //
-
+//the purpose of the below is to be use in order to be bale to log in with Google
 import SwiftUI
 
 final class ApplicationUtility {

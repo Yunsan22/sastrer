@@ -13,6 +13,7 @@ class ClientViewModel: ObservableObject {
     
     @Published var clientInfo = [ClientDataList]()
     
+//    @Published var contats: [String: [ClientDataList]]
 
     init() {
         getData()

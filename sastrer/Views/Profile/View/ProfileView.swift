@@ -102,7 +102,7 @@ struct ProfileView: View {
     var menu: some View {
         Section {
             Label("Settings",systemImage: "gear")
-            Label("Billing",systemImage: "creditcard")
+            Label("Info",systemImage: "creditcard")
             Label("Help",systemImage: "questionmark")
         }
         .listRowSeparatorTint(.blue)

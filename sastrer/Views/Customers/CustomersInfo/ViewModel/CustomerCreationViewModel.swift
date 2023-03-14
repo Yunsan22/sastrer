@@ -38,6 +38,12 @@ final class CustomerCreationViewModelImpl: ObservableObject, CustomerCreaionView
         !customerDetails.clientInfo.phone.isEmpty &&
         !customerDetails.clientInfo.comments.isEmpty
     }
+    var allFieldsEmpty: Bool {
+        customerDetails.clientInfo.firstName.isEmpty &&
+//        !customerDetails.clientInfo.lastName.isEmpty &&
+        customerDetails.clientInfo.phone.isEmpty &&
+        customerDetails.clientInfo.comments.isEmpty
+    }
     func clearAll() {
         self.customerDetails = .new
         

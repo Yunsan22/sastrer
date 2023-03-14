@@ -32,7 +32,7 @@ struct SearchView: View {
                 )
             }
             .preferredColorScheme(.dark)
-            .searchable(text: $text,placement: .navigationBarDrawer(displayMode: .always),prompt: Text("something, else, app")) {
+            .searchable(text: $text,placement: .navigationBarDrawer(displayMode: .always),prompt: Text("Take Measures, New Job, Delivered Jobs")) {
                 ForEach(suggestions) { suggestion in
                     
                     Button {
@@ -56,6 +56,7 @@ struct SearchView: View {
                 }
             }
             .sheet(isPresented: $show) {
+        
                 CustomerDetailsView(namespace: namespace, shouldShowDashboard: $show, dashorButtons: dashboardButtons[selectedIndex])
                 
             }

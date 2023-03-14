@@ -23,10 +23,11 @@ struct ContentView: View {
                     HomeView()
                 case .measuresView:
                     CustomersMeasuresList(text: $text)
+//                    testView()
                 case .toDoss:
                     ToDoView()
                 case .calendarVi:
-                    CalendarItemView()
+                    DueJobsCalendarView()
                 }
  
             TabBar()

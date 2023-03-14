@@ -10,9 +10,19 @@
 		1E49972C0322F77431CBD725 /* Pods_Tailored.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E187D77E4CBA46EB18407D88 /* Pods_Tailored.framework */; };
 		212C96B40B78B0A626DB8603 /* Pods_Tailored_TailoredUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC49751FE2BD425B090D8346 /* Pods_Tailored_TailoredUITests.framework */; };
 		9EFC13EF6E570690FB4C6FC9 /* Pods_TailoredTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA032119818BD039592836F7 /* Pods_TailoredTests.framework */; };
+		BD2E937829BFC56800B1FA7B /* NewJobSectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E937729BFC56800B1FA7B /* NewJobSectionRow.swift */; };
+		BD2E937A29BFE6C000B1FA7B /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E937929BFE6C000B1FA7B /* SectionView.swift */; };
+		BD2E937E29C092E700B1FA7B /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E937D29C092E700B1FA7B /* test.swift */; };
+		BD6130F029C0D80A00D0E20C /* TouchEnterExit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6130EF29C0D80A00D0E20C /* TouchEnterExit.swift */; };
+		BD6130F229C0DCF900D0E20C /* anothertext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6130F129C0DCF900D0E20C /* anothertext.swift */; };
 		BDA2A89429BCAE3C007870A3 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2A89329BCAE3C007870A3 /* CircleView.swift */; };
 		BDA2A89629BCB0F7007870A3 /* DetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2A89529BCB0F7007870A3 /* DetailsSection.swift */; };
 		BDA2A89829BD3580007870A3 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2A89729BD3580007870A3 /* EmptyView.swift */; };
+		BDA2A89A29BE57B4007870A3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2A89929BE57B4007870A3 /* CalendarView.swift */; };
+		BDA2A89C29BE9085007870A3 /* DueJobsCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2A89B29BE9085007870A3 /* DueJobsCalendarView.swift */; };
+		BDA2A89E29BE95AD007870A3 /* SectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2A89D29BE95AD007870A3 /* SectionRow.swift */; };
+		BDA2A8A229BFBCBA007870A3 /* NewJobsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2A8A129BFBCBA007870A3 /* NewJobsDetailsView.swift */; };
+		BDA2A8A429BFBD26007870A3 /* NewJobSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2A8A329BFBD26007870A3 /* NewJobSectionView.swift */; };
 		BDB852E02997C4AC00E82E34 /* DashboardButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB852DF2997C4AC00E82E34 /* DashboardButtons.swift */; };
 		BDB852E4299912FE00E82E34 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB852E3299912FE00E82E34 /* LoginView.swift */; };
 		BDB852E62999147000E82E34 /* InputPasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB852E52999147000E82E34 /* InputPasswordFieldView.swift */; };
@@ -90,7 +100,6 @@
 		BDD15A1129A9638E00171A44 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A1029A9638E00171A44 /* SearchView.swift */; };
 		BDD15A1529AEA91E00171A44 /* CustomersMeasuresList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A1429AEA91E00171A44 /* CustomersMeasuresList.swift */; };
 		BDD15A1929AF77E400171A44 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A1829AF77E400171A44 /* ToDoView.swift */; };
-		BDD15A1D29AF784D00171A44 /* CalendarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A1C29AF784D00171A44 /* CalendarItemView.swift */; };
 		BDD15A1F29AF790900171A44 /* DashboardSearchSugestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A1E29AF790900171A44 /* DashboardSearchSugestion.swift */; };
 		BDD15A2429B29BE500171A44 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A2329B29BE500171A44 /* LaunchScreenView.swift */; };
 		BDD15A2629B2A35100171A44 /* LaunchScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD15A2529B2A35100171A44 /* LaunchScreenManager.swift */; };
@@ -130,9 +139,19 @@
 		71ED193BB6FE1CFCF71B617E /* Pods-TailoredTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TailoredTests.debug.xcconfig"; path = "Target Support Files/Pods-TailoredTests/Pods-TailoredTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81730B2CB1D9DFF780A40086 /* Pods-Tailored.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tailored.debug.xcconfig"; path = "Target Support Files/Pods-Tailored/Pods-Tailored.debug.xcconfig"; sourceTree = "<group>"; };
 		BC49751FE2BD425B090D8346 /* Pods_Tailored_TailoredUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tailored_TailoredUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD2E937729BFC56800B1FA7B /* NewJobSectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobSectionRow.swift; sourceTree = "<group>"; };
+		BD2E937929BFE6C000B1FA7B /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		BD2E937D29C092E700B1FA7B /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		BD6130EF29C0D80A00D0E20C /* TouchEnterExit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEnterExit.swift; sourceTree = "<group>"; };
+		BD6130F129C0DCF900D0E20C /* anothertext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anothertext.swift; sourceTree = "<group>"; };
 		BDA2A89329BCAE3C007870A3 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		BDA2A89529BCB0F7007870A3 /* DetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSection.swift; sourceTree = "<group>"; };
 		BDA2A89729BD3580007870A3 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		BDA2A89929BE57B4007870A3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		BDA2A89B29BE9085007870A3 /* DueJobsCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueJobsCalendarView.swift; sourceTree = "<group>"; };
+		BDA2A89D29BE95AD007870A3 /* SectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionRow.swift; sourceTree = "<group>"; };
+		BDA2A8A129BFBCBA007870A3 /* NewJobsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobsDetailsView.swift; sourceTree = "<group>"; };
+		BDA2A8A329BFBD26007870A3 /* NewJobSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobSectionView.swift; sourceTree = "<group>"; };
 		BDB852DF2997C4AC00E82E34 /* DashboardButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardButtons.swift; sourceTree = "<group>"; };
 		BDB852E3299912FE00E82E34 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BDB852E52999147000E82E34 /* InputPasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordFieldView.swift; sourceTree = "<group>"; };
@@ -189,7 +208,6 @@
 		BDD15A1029A9638E00171A44 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		BDD15A1429AEA91E00171A44 /* CustomersMeasuresList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersMeasuresList.swift; sourceTree = "<group>"; };
 		BDD15A1829AF77E400171A44 /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
-		BDD15A1C29AF784D00171A44 /* CalendarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemView.swift; sourceTree = "<group>"; };
 		BDD15A1E29AF790900171A44 /* DashboardSearchSugestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSearchSugestion.swift; sourceTree = "<group>"; };
 		BDD15A2029B228FB00171A44 /* Tailored-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Tailored-Info.plist"; sourceTree = "<group>"; };
 		BDD15A2329B29BE500171A44 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
@@ -280,6 +298,16 @@
 				DA032119818BD039592836F7 /* Pods_TailoredTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD6130F329C0DD9C00D0E20C /* textLettersection */ = {
+			isa = PBXGroup;
+			children = (
+				BDD15A3129B8AEFE00171A44 /* TestFile.swift */,
+				BD6130F129C0DCF900D0E20C /* anothertext.swift */,
+				BD6130EF29C0D80A00D0E20C /* TouchEnterExit.swift */,
+			);
+			path = textLettersection;
 			sourceTree = "<group>";
 		};
 		BDB852DD2997C2E200E82E34 /* Views */ = {
@@ -591,11 +619,11 @@
 		BDCE71B62996BB8900A16560 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				BD6130F329C0DD9C00D0E20C /* textLettersection */,
 				BDB852DE2997C32B00E82E34 /* topBar */,
 				BDCE71E42996E6DD00A16560 /* BottomTabBar */,
 				BDCE714F2996B46400A16560 /* ContentView.swift */,
 				BDD15A1029A9638E00171A44 /* SearchView.swift */,
-				BDD15A3129B8AEFE00171A44 /* TestFile.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -613,6 +641,9 @@
 			isa = PBXGroup;
 			children = (
 				BDCE71BB2996BC2C00A16560 /* CustomerDetailsView.swift */,
+				BDA2A8A129BFBCBA007870A3 /* NewJobsDetailsView.swift */,
+				BDA2A8A329BFBD26007870A3 /* NewJobSectionView.swift */,
+				BD2E937929BFE6C000B1FA7B /* SectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -671,6 +702,8 @@
 				BDCE71D42996BFFB00A16560 /* ButtonView.swift */,
 				BDCE71DE2996C1EF00A16560 /* MensComponent.swift */,
 				BDBCF39229A576DD00184D51 /* BlobView.swift */,
+				BDA2A89D29BE95AD007870A3 /* SectionRow.swift */,
+				BD2E937729BFC56800B1FA7B /* NewJobSectionRow.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -741,6 +774,7 @@
 			isa = PBXGroup;
 			children = (
 				BDD15A1429AEA91E00171A44 /* CustomersMeasuresList.swift */,
+				BD2E937D29C092E700B1FA7B /* test.swift */,
 				BDA2A89729BD3580007870A3 /* EmptyView.swift */,
 			);
 			path = View;
@@ -750,7 +784,6 @@
 			isa = PBXGroup;
 			children = (
 				BDD15A1729AF77CB00171A44 /* view */,
-				BDD15A1C29AF784D00171A44 /* CalendarItemView.swift */,
 			);
 			path = "To-Dos";
 			sourceTree = "<group>";
@@ -774,6 +807,8 @@
 		BDD15A1B29AF782800171A44 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BDA2A89929BE57B4007870A3 /* CalendarView.swift */,
+				BDA2A89B29BE9085007870A3 /* DueJobsCalendarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1132,13 +1167,13 @@
 				BDCE71B12996BA7000A16560 /* SuitMeasuresDetails.swift in Sources */,
 				BDB85303299D02F100E82E34 /* LoginCredentials.swift in Sources */,
 				BDD15A2429B29BE500171A44 /* LaunchScreenView.swift in Sources */,
-				BDD15A1D29AF784D00171A44 /* CalendarItemView.swift in Sources */,
 				BDB852E62999147000E82E34 /* InputPasswordFieldView.swift in Sources */,
 				BDB852E829998C5B00E82E34 /* CloseModifier.swift in Sources */,
 				BDB852FD299BB53900E82E34 /* SessionUserDetails.swift in Sources */,
 				BDCE71BC2996BC2C00A16560 /* CustomerDetailsView.swift in Sources */,
 				BDB8530F299ED53800E82E34 /* ForgotPasswordViewModel.swift in Sources */,
 				BDB85309299D079B00E82E34 /* LoginViewModel.swift in Sources */,
+				BD2E937E29C092E700B1FA7B /* test.swift in Sources */,
 				BDD15A1129A9638E00171A44 /* SearchView.swift in Sources */,
 				BDCE71DF2996C1EF00A16560 /* MensComponent.swift in Sources */,
 				BDCE71C32996BD4900A16560 /* CustomerInfoService.swift in Sources */,
@@ -1148,20 +1183,27 @@
 				BDA2A89829BD3580007870A3 /* EmptyView.swift in Sources */,
 				BDB852F62999CD1200E82E34 /* RegistrationService.swift in Sources */,
 				BDCE71EC2996EADA00A16560 /* Tab.swift in Sources */,
+				BD2E937A29BFE6C000B1FA7B /* SectionView.swift in Sources */,
 				BDCE71C12996BCEC00A16560 /* CustomerCreationViewModel.swift in Sources */,
+				BD2E937829BFC56800B1FA7B /* NewJobSectionRow.swift in Sources */,
 				BDCE71CE2996BF4000A16560 /* Styles.swift in Sources */,
+				BDA2A8A229BFBCBA007870A3 /* NewJobsDetailsView.swift in Sources */,
 				BDD15A0F29A9448900171A44 /* Model.swift in Sources */,
 				BDCE71B52996BB4F00A16560 /* TakeMeasuresView.swift in Sources */,
 				BDCE71D72996C03B00A16560 /* AnimatableFontModifier.swift in Sources */,
 				BDB85306299D033D00E82E34 /* LoginService.swift in Sources */,
 				BDD15A3229B8AEFE00171A44 /* TestFile.swift in Sources */,
 				BDCE71D52996BFFB00A16560 /* ButtonView.swift in Sources */,
+				BDA2A89E29BE95AD007870A3 /* SectionRow.swift in Sources */,
 				BDCE71D32996BFBF00A16560 /* ItemsDue.swift in Sources */,
 				BDBCF39529A6B6BC00184D51 /* Animations.swift in Sources */,
 				BDCE71B82996BBA200A16560 /* NagivationBar.swift in Sources */,
 				BDCE717A2996B51C00A16560 /* HomeView.swift in Sources */,
+				BDA2A8A429BFBD26007870A3 /* NewJobSectionView.swift in Sources */,
 				BDB852E02997C4AC00E82E34 /* DashboardButtons.swift in Sources */,
 				BDD15A3729BAE86100171A44 /* AltLoginView.swift in Sources */,
+				BD6130F029C0D80A00D0E20C /* TouchEnterExit.swift in Sources */,
+				BD6130F229C0DCF900D0E20C /* anothertext.swift in Sources */,
 				BDBCF39329A576DD00184D51 /* BlobView.swift in Sources */,
 				BDCE71D02996BF5900A16560 /* PreferenceKeys.swift in Sources */,
 				BDB85300299BB5D200E82E34 /* SessionService.swift in Sources */,
@@ -1170,11 +1212,13 @@
 				BDD15A2629B2A35100171A44 /* LaunchScreenManager.swift in Sources */,
 				BDCE71EA2996E7CA00A16560 /* ProfileView.swift in Sources */,
 				BDD15A4229BB54BA00171A44 /* +View.swift in Sources */,
+				BDA2A89A29BE57B4007870A3 /* CalendarView.swift in Sources */,
 				BDB852EC29999CB000E82E34 /* RegisterView.swift in Sources */,
 				BDA2A89429BCAE3C007870A3 /* CircleView.swift in Sources */,
 				BDD15A1F29AF790900171A44 /* DashboardSearchSugestion.swift in Sources */,
 				BDCE71802996B80C00A16560 /* SuitMeasuresService.swift in Sources */,
 				BDCE71502996B46400A16560 /* ContentView.swift in Sources */,
+				BDA2A89C29BE9085007870A3 /* DueJobsCalendarView.swift in Sources */,
 				BDD15A3D29BAFA4A00171A44 /* InputStyle.swift in Sources */,
 				BDD15A3929BAE8B600171A44 /* AltSignUpView.swift in Sources */,
 				BDB852E4299912FE00E82E34 /* LoginView.swift in Sources */,
